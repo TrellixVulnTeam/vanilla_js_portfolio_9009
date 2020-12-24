@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" type="text/css" href="./dist/index.css"/>
+</head>
+<body>
+    <div class='menu-container'>
+        <input class='toggler' type='checkbox'/>
+        <div class='burger-menu'><div></div></div>
+        <div class='menu'>
+            <ul>
+                <li>Home</li>
+                <li>Projects</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class='shroud'></div>
+    </div>
+    <div class='container'>
+        <h2>Title</h2>
+        <p class='text-container' id='first'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</p>
+        <p class='text-container' id='second'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</p>
+    </div>
+
+    <div class='flex-container'>
+        <div>First box</div>
+        <div>Second box</div>
+        <div>Third box</div>
+    </div>
+
+    <div class='width-display'>Display</div>
+
+    <script>
+        const output = document.querySelector('.width-display')
+        const container = document.querySelector('.flex-container')
+        window.addEventListener('resize', () => {
+            output.textContent = container.clientWidth
+        })
+    </script>
+</body>
+</html>
