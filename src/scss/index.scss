@@ -15,9 +15,10 @@ body {
 }
 
 .menu-container {
+    margin-top: 0;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     width: 60px;
     height: 60px;
 
@@ -187,24 +188,43 @@ h2 {
     }
 }
 
-@media screen and (max-width: 700px) {
-    .menu-container .menu {
-        top: -100vh;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        clip-path: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media screen and (max-width: 750px) {
+    .menu-container {
+    
+        .menu {
+            top: -100vh;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            clip-path: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-        ul {
-            margin-top: 0;
-            li {
+            ul {
                 margin-top: 0;
-                text-align: center;
+                li {
+                    margin-top: 0;
+                    text-align: center;
+                }
             }
+        }
+        width: 40px;
+        height: 40px;
+
+        .burger-menu div {
+            height: 5px;
+        }
+
+        .burger-menu div::before {
+            top: -10px;
+            height: 5px;
+        }
+
+        .burger-menu div::after {
+            bottom: -10px;
+            height: 5px;
         }
     }
 
