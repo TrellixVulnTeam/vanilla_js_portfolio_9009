@@ -5,40 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid</title>
     <link rel="stylesheet" type="text/css" href="./index.css"/>
+    <script src='load.js' defer></script>
 </head>
 <body>
-    <div class='menu-container'>
-        <input class='toggler' type='checkbox'/>
-        <div class='burger-menu'><div></div></div>
-        <div class='menu'>
-            <ul>
-                <li>Home</li>
-                <li>Projects</li>
-                <li>Contact</li>
-            </ul>
+    <div class='header'>
+        <div class='menu-container'>
+            <input class='toggler' type='checkbox'/>
+            <div class='burger-menu'><div></div></div>
+            <div class='menu'>
+                <ul>
+                    <!-- <li><a href="/">HOME</a></li>
+                    <li><a href="/">PROJECTS</a></li>
+                    <li><a href="/">CONTACT</a></li> -->
+                    <li class='link' id='link-home' onClick="navigateHome()">HOME</li>
+                    <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
+                    <li class='link' id='link-contact' onClick="navigateContact()">CONTACT</li>
+                </ul>
+            </div>
+            <div class='shroud'></div>
         </div>
-        <div class='shroud'></div>
+        <div class='contact-links'>
+            <span>mpnix@protonmail.com</span>
+            <img src='./assets/github-logo.png' alt='github' width='30px' />
+            <img src='./assets/linkedin-logo.png' alt='linked in' width='30px' />
+        </div>
     </div>
-    <div class='container'>
-        <h2>Title</h2>
-        <p class='text-container' id='first'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</p>
-        <p class='text-container' id='second'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</p>
+    <div class='main'>
+        <div id='home' class='container'>
+            <h2>Latest</h2>
+            <p class='text-container' id='first'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</p>
+            <p class='text-container' id='second'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</p>
+        </div>
+        <div id='projects' class='container'>
+            <h2>Projects</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+        </div>
+        <div id='contact' class='container'>
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+        </div>
     </div>
-
-    <div class='flex-container'>
-        <div>First box</div>
-        <div>Second box</div>
-        <div>Third box</div>
-    </div>
-
-    <div class='width-display'>Display</div>
-
-    <script>
-        const output = document.querySelector('.width-display')
-        const container = document.querySelector('.flex-container')
-        window.addEventListener('resize', () => {
-            output.textContent = container.clientWidth
-        })
-    </script>
 </body>
 </html>
