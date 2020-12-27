@@ -1,7 +1,9 @@
 const home = document.getElementById('home')
 const projects = document.getElementById('projects')
 const contact = document.getElementById('contact')
-const links = document.querySelectorAll('.link')
+const linkHome = document.getElementById('link-home')
+const linkProjects = document.getElementById('link-projects')
+const linkContact = document.getElementById('link-contact')
 const faders = document.querySelectorAll('.fader')
 
 const navigateHome = () => {
@@ -9,9 +11,14 @@ const navigateHome = () => {
     projects.style.display = 'none'
     contact.style.display = 'none'
 
-    links[0].style.color = 'pink'
-    links[1].style.color = 'white'
-    links[2].style.color = 'white'
+    // linkHome.style.color = 'pink'
+    // linkProjects.style.color = 'white'
+    // linkContact.style.color = 'white'
+    linkHome.classList.add('active-link')
+    linkProjects.classList.remove('active-link')
+    linkContact.classList.remove('active-link')
+
+    document.getElementsByClassName('toggler')[0].checked = false
 }
 
 const navigateProjects = () => {
@@ -27,9 +34,11 @@ const navigateProjects = () => {
         observer.observe(fader)
     })
 
-    links[0].style.color = 'white'
-    links[1].style.color = 'pink'
-    links[2].style.color = 'white'
+    linkHome.classList.remove('active-link')
+    linkProjects.classList.add('active-link')
+    linkContact.classList.remove('active-link')
+
+    document.getElementsByClassName('toggler')[0].checked = false
 }
 
 const navigateContact = () => {
@@ -37,9 +46,11 @@ const navigateContact = () => {
     projects.style.display = 'none'
     contact.style.display = 'block'
 
-    links[0].style.color = 'white'
-    links[1].style.color = 'white'
-    links[2].style.color = 'pink'
+    linkHome.classList.remove('active-link')
+    linkProjects.classList.remove('active-link')
+    linkContact.classList.add('active-link')
+
+    document.getElementsByClassName('toggler')[0].checked = false
 }
 
 const options = {
