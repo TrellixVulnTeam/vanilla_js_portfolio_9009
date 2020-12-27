@@ -209,6 +209,17 @@ body {
     grid-template-areas: 'T T T T' 'L L R R';
 }
 
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: calc((#{$burger-dimensions} * 2) + 2rem);
+
+    & > * {
+        margin-bottom: 10vh;
+    }
+}
+
 h2 {
     color: $highlightFont;
     background: $primary;
@@ -233,7 +244,7 @@ h2 {
 }
 
 #home {
-    display: grid;
+    display: block;
 }
 
 #projects {
@@ -242,6 +253,24 @@ h2 {
 
 #contact {
     display: none;
+}
+
+.el {
+    width: 60%;
+}
+
+.fader {
+    // margin: 0 auto;
+    width: 60%;
+    background: rgba(0,40,210,0.3);
+    opacity: 0;
+    transform: translateX(25vw);
+    transition: transform 650ms ease-out, opacity 250ms ease-in;
+}
+
+.appear {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 @media screen and (max-width: 750px) {
