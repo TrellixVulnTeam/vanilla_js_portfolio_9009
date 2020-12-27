@@ -1,5 +1,5 @@
 @import 'variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Codystar&family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Codystar&family=Montserrat:wght@300&display=swap');
 
 /* Remove browser scrollbar */
 :root {
@@ -21,9 +21,13 @@
     margin-top: 1rem;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     margin-top: 0;
-    font-family: 'Iceland', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header {
@@ -36,6 +40,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 99;
     background: linear-gradient(to bottom, white 60%, rgba(255,255,255,0.7) 85%, rgba(255,255,255,0) 100%);
 
     .contact-links {
@@ -44,6 +49,8 @@ body {
         justify-content: space-around;
         align-items: center;
         right: 0;
+        min-width: 15vw;
+        min-height: 5vh;
         color: white;
         background: rgba(0,0,0,0.8);
         margin-top: 0;
@@ -72,6 +79,7 @@ body {
         opacity: 1;
         left: 0;
         width: $menu-width;
+        min-width: 10vw;
         margin-top: 0;
         transition: right 400ms ease-out, opacity 0.5s ease;
         display: flex;
@@ -84,13 +92,13 @@ body {
         ul {
             margin-top: 20vh;
             list-style: none;
-            font-size: 1.5rem;
+            font-size: 1.5em;
             .link {
                 margin-bottom: 1.5rem;
                 cursor: pointer;
-                font-family: 'Codystar', cursive;
+                // font-family: 'Codystar', cursive;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 800;
-                font-size: 1.2rem;
                 text-decoration: none;
                 color: white;
                 &:hover {
@@ -215,14 +223,17 @@ body {
     align-items: center;
     margin-top: calc((#{$burger-dimensions} * 2) + 2rem);
 
+    p {
+        padding: 1rem;
+    }
+
     & > * {
         margin-bottom: 10vh;
     }
 }
 
 h2 {
-    color: $highlightFont;
-    background: $primary;
+    color: black;
     grid-area: T;
     display: flex;
     justify-content: center;
@@ -260,12 +271,28 @@ h2 {
 }
 
 .fader {
-    // margin: 0 auto;
-    width: 60%;
-    background: rgba(0,40,210,0.3);
+    margin-top: 0;
+    padding: 1rem;
+    width: 80%;
     opacity: 0;
     transform: translateX(25vw);
     transition: transform 650ms ease-out, opacity 250ms ease-in;
+    background-color: rgba(0,0,0,0.05);
+    img {
+        padding: 1rem;
+        background-color: rgba(0,0,0,0.05);
+    }
+
+    .project-links {
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            margin-top: 0;
+            color: black;
+            text-decoration: none;
+        }
+    }
 }
 
 .appear {
@@ -274,6 +301,18 @@ h2 {
 }
 
 @media screen and (max-width: 750px) {
+
+    .contact-links {
+        display: none;
+        opacity: 0;
+    }
+
+    .main {
+        width: 90vw;
+        margin: 0 auto;
+        padding: 0;
+    }
+
     .menu-container {
 
         .toggler {

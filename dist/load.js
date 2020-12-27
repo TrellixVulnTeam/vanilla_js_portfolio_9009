@@ -12,9 +12,6 @@ const navigateHome = () => {
     links[0].style.color = 'pink'
     links[1].style.color = 'white'
     links[2].style.color = 'white'
-    // linkHome.classList.add('active')
-    // linkProjects.classList.remove('active')
-    // linkContact.classList.remove('active')
 }
 
 const navigateProjects = () => {
