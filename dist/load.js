@@ -11,9 +11,6 @@ const navigateHome = () => {
     projects.style.display = 'none'
     contact.style.display = 'none'
 
-    // linkHome.style.color = 'pink'
-    // linkProjects.style.color = 'white'
-    // linkContact.style.color = 'white'
     linkHome.classList.add('active-link')
     linkProjects.classList.remove('active-link')
     linkContact.classList.remove('active-link')
@@ -54,7 +51,7 @@ const navigateContact = () => {
 }
 
 const options = {
-    threshold: 0.4
+    threshold: 0.15
 }
 
 const observer = new IntersectionObserver((entries, observer) => {

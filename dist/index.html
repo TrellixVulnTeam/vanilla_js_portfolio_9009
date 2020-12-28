@@ -16,8 +16,9 @@
             <div class='burger-menu'><div></div></div>
             <div class='menu'>
                 <ul>
-                    <li class='link' id='link-home' onClick="navigateHome()">HOME</li>
+                    <li class='link active-link' id='link-home' onClick="navigateHome()">HOME</li>
                     <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
+                    <!-- <li class='link' id='link-projects' onClick="navigateProjects()">CV</li> -->
                     <li class='link' id='link-contact' onClick="navigateContact()">CONTACT</li>
                 </ul>
             </div>
@@ -25,13 +26,13 @@
         </div>
         <div class='contact-links'>
             <span>mpnix@protonmail.com</span>
-            <img src='./assets/github-logo.png' alt='github' width='30px' />
-            <img src='./assets/linkedin-logo.png' alt='linked in' width='30px' />
+            <img src='./assets/github-logo.png' alt='github' />
+            <img src='./assets/linkedin-logo.png' alt='linked in' />
         </div>
     </div>
     <div class='main'>
 <!-- Home page -->
-        <div id='home' class='container'>
+        <div id='home' class='container home-container'>
             <h1>Latest</h1>
             <div class='text-container' id='first'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</div>
             <div class='text-container' id='second'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
@@ -39,7 +40,7 @@
             <div class='text-container' id='fourth'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
         </div>
 <!-- Projects page -->
-        <div id='projects' class='projects-container'>
+        <div id='projects' class='container projects-container'>
             <!-- <h2>Projects</h2> -->
             <div class='fader'>
                 <h3>Green Oil</h3>
