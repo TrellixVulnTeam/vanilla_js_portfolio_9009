@@ -31,7 +31,7 @@ body {
     h1 {
         width: 100%;
         font-size: 2.5em;
-        color: pink;
+        color: $highlightFont;
         text-align: center;
     }
 }
@@ -120,7 +120,7 @@ body {
             }
 
             .active-link {
-                color: pink;
+                color: $highlightFont;
             }
         }
     }
@@ -215,10 +215,11 @@ body {
 }
 
 .main {
-    margin-top: calc((#{$burger-dimensions} * 2) + 2rem);
+    margin-top: calc((#{$burger-dimensions} * 2) + 1rem);
     width: calc(100vw - #{$menu-width});
+    height: calc(100vh - ((#{$burger-dimensions} * 2) + 1rem));
     margin-left: calc(#{$menu-width});
-    padding: 0 2rem;
+    padding: 0 2rem 5rem;
 }
 
 .container {
@@ -234,7 +235,7 @@ body {
     & > div {
         flex-basis: 400px;
         flex-grow: 1;
-        background: orange;
+        background-color: $highlightFont;
         padding: 1rem;
     }
 }
@@ -275,17 +276,16 @@ body {
 
 .fader {
     margin-top: 0;
-    padding: 1rem;
-    width: 60%;
-    border-radius: 0.5rem;
+    padding: 1rem 4rem;
     opacity: 0;
     transform: translateX(25vw);
+    background-color: rgba($highlightFont, 0.18);
     transition: transform 650ms ease-out, opacity 250ms ease-in;
-    background-color: rgba(0,0,0,0.05);
-
+    color: black;
+    clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+    
     img {
-        padding: 1rem;
-        background-color: rgba(0,0,0,0.05);
+        box-shadow: 0 5px 10px 2px rgba(0,0,0,0.35);
     }
 
     .project-links {
@@ -293,14 +293,15 @@ body {
         justify-content: space-around;
 
         a {
-            width: 40%;
+            width: 35%;
             height: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             background: rgba(0,0,0,0.05);
-            border: 2px solid rgba(0,0,0,0.2);
-            margin-top: 0;
+            border: 1px solid black;
+            padding: 1.5rem 2rem;
+            margin: 0.5rem auto 1rem;
             color: black;
             text-decoration: none;
             z-index: 30;
@@ -315,18 +316,24 @@ body {
 
 @media screen and (max-width: 750px) {
 
+    .header {
+        height: calc(#{$burger-dimensions} * 2);
+    }
+
     .contact-links {
         display: none;
         opacity: 0;
     }
 
     .main {
-        width: 90vw;
+        width: 100vw;
         margin: 0 auto;
+        margin-top: calc((#{$burger-dimensions} * 1.9));
         padding: 0;
 
         .fader {
-            width: 85%;
+            width: 90vw;
+            padding: 1rem 2rem;
         }
     }
 
@@ -388,7 +395,8 @@ body {
 
 @media screen and (min-width: 900px) {
     .main .fader {
-        width: 75%;
+        width: 90%;
+        padding: 2rem 4rem;
     }
 }
 
@@ -422,6 +430,10 @@ body {
         margin-top: calc((#{$burger-dimensions} * 6));
         margin-left: calc(#{$menu-width} * 2);
         width: calc(100vw - (#{$menu-width} * 2));
+
+        .fader {
+            padding: 3rem 8rem;
+        }
     }
 
     .projects-container {
