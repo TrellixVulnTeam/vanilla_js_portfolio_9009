@@ -264,8 +264,12 @@ body {
     display: none;
 }
 
-.el {
-    width: 60%;
+#third {
+    flex-basis: 65%;
+}
+
+#fourth {
+    flex-basis: 0;
 }
 
 .fader {
@@ -277,6 +281,7 @@ body {
     transform: translateX(25vw);
     transition: transform 650ms ease-out, opacity 250ms ease-in;
     background-color: rgba(0,0,0,0.05);
+
     img {
         padding: 1rem;
         background-color: rgba(0,0,0,0.05);
@@ -287,7 +292,7 @@ body {
         justify-content: space-around;
 
         a {
-            width: 50%;
+            width: 40%;
             height: 2rem;
             display: flex;
             justify-content: center;
