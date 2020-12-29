@@ -65,16 +65,16 @@ const observer = new IntersectionObserver((entries, observer) => {
     })
 }, options)
 
-const hoverables = document.querySelectorAll('.giftest')
+const hoverables = document.querySelectorAll('.image-container')
 
 hoverables.forEach(el => {
     const newImg = el.id
     console.log(newImg)
     el.addEventListener('mouseenter', () => {
-        el.src = `./assets/gifs/${newImg}.gif`
+        el.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
     })
     el.addEventListener('mouseleave', () => {
-        el.src = `./assets/${newImg}.png`
+        el.style.backgroundImage = `url(./assets/${newImg}.png)`
     })
 })
 // hoverable.addEventListener('mouseenter', () => {

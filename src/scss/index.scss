@@ -285,7 +285,7 @@ body {
 
 .fader {
     margin-top: 0;
-    min-height: 500px;
+    height: 40vw;
     max-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -300,19 +300,16 @@ body {
     
     .image-container {
         position: relative;
-        width: 100%;
-        min-height: 300px;
-        display: flex;
-        align-items: flex-end;
-
-        img {
-            box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
-        }
+        flex-basis: 80%;
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
 
         &::before, &::after {
             position: absolute;
             content: '';
-            bottom: 5px;
+            bottom: 4px;
             width: 45%;
             height: 20px;
             box-shadow: 0 0 5px 8px rgba(0,0,0,0.3);
@@ -321,12 +318,12 @@ body {
 
         &::before {
             left: 10px;
-            transform: rotate(-1deg);
+            transform: rotate(-0.75deg);
         }
 
         &::after {
             right: 10px;
-            transform: rotate(1deg);
+            transform: rotate(0.75deg);
         }
     }
 
@@ -380,7 +377,15 @@ body {
 
         .fader {
             width: 90vw;
+            height: 400px;
             padding: 1rem 2rem;
+
+            .image-container {
+                &::before, &::after {
+                    bottom: 8px;
+                    width: 40%;
+                }
+            }
         }
     }
 
