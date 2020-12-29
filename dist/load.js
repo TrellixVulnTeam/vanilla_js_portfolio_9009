@@ -64,3 +64,23 @@ const observer = new IntersectionObserver((entries, observer) => {
         }
     })
 }, options)
+
+const hoverables = document.querySelectorAll('.giftest')
+
+hoverables.forEach(el => {
+    const newImg = el.id
+    console.log(newImg)
+    el.addEventListener('mouseenter', () => {
+        el.src = `./assets/gifs/${newImg}.gif`
+    })
+    el.addEventListener('mouseleave', () => {
+        el.src = `./assets/${newImg}.png`
+    })
+})
+// hoverable.addEventListener('mouseenter', () => {
+//     hoverable.src = 'https://media.giphy.com/media/ghxFfvf3ggNbO/giphy.gif'
+// })
+
+// hoverable.addEventListener('mouseleave', () => {
+//     hoverable.src = './assets/giphy.gif'
+// })
