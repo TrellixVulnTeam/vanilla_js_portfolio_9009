@@ -84,3 +84,9 @@ hoverables.forEach(el => {
 // hoverable.addEventListener('mouseleave', () => {
 //     hoverable.src = './assets/giphy.gif'
 // })
+
+const copyEmail = () => {
+    const input = document.getElementById('emailAddress')
+    input.select()
+    document.execCommand("copy")
+}
