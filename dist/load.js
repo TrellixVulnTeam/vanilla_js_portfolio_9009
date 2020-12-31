@@ -65,28 +65,17 @@ const observer = new IntersectionObserver((entries, observer) => {
     })
 }, options)
 
-const hoverables = document.querySelectorAll('.image-container')
+const hoverables = document.querySelectorAll('.fader')
+const imageContainer = document.querySelectorAll('.image-container')
+const imageTest = document.getElementById('green-oil')
 
-hoverables.forEach(el => {
-    const newImg = el.id
-    console.log(newImg)
+hoverables.forEach((el, i) => {
+    const newImg = imageContainer[i].id
+    console.log(imageContainer[i])
     el.addEventListener('mouseenter', () => {
-        el.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
+        imageContainer[i].style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
     })
     el.addEventListener('mouseleave', () => {
-        el.style.backgroundImage = `url(./assets/${newImg}.png)`
+        imageContainer[i].style.backgroundImage = `url(./assets/${newImg}.png)`
     })
 })
-// hoverable.addEventListener('mouseenter', () => {
-//     hoverable.src = 'https://media.giphy.com/media/ghxFfvf3ggNbO/giphy.gif'
-// })
-
-// hoverable.addEventListener('mouseleave', () => {
-//     hoverable.src = './assets/giphy.gif'
-// })
-
-const copyEmail = () => {
-    const input = document.getElementById('emailAddress')
-    input.select()
-    document.execCommand("copy")
-}

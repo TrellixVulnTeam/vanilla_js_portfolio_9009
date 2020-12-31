@@ -258,7 +258,8 @@ body {
     width: calc(100vw - #{$menu-width});
     height: calc(100vh - ((#{$burger-dimensions} * 2) + 1rem));
     margin-left: calc(#{$menu-width});
-    padding: 0 2rem 5rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
 }
 
 .container {
@@ -283,6 +284,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     p {
         padding: 1rem;
@@ -316,35 +321,18 @@ body {
 .fader {
     position: relative;
     margin-top: 0;
-    height: 40vw;
-    max-height: 90vh;
-    min-height: 500px;
+    width: 60%;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 1rem 4rem;
+    // padding: 1rem 4rem;
     opacity: 0;
     transform: translateX(25vw);
     background-color: rgba($highlightFont, 0.18);
-    transition: transform 650ms ease-out, opacity 250ms ease-in;
+    transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     color: black;
     clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
-
-    // &::before, &::after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 2px;
-    //     height: 100%;
-    //     width: 10px;
-    //     background: rgba($highlightFont, 0.4);
-    //     transform: rotate(2.5deg);
-    //     z-index: 10;
-    // }
-
-    // &::after {
-    //     left: calc(100% - 12px);
-    // }
 
     div .description {
         margin: 0;
@@ -352,19 +340,18 @@ body {
     
     .image-container {
         position: relative;
-        flex-basis: 80%;
+        height: 80%;
+        min-height: calc(100% - 13rem);
+        margin: 2rem auto;
         align-self: center;
-        min-width: 100%;
+        justify-self: center;
+        width: 100%;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         background-color: rgb(247, 247, 247);
         background-size: 100% auto;
-        background-position: center top;
+        background-position: center center;
         background-repeat: no-repeat;
-        transition: min-width 400ms ease-in 100ms;
-
-        &:hover {
-            min-width: 125%;
-        }
+        transition: width 200ms ease-in 200ms;
 
         &::before, &::after {
             position: absolute;
@@ -385,6 +372,12 @@ body {
         &::after {
             right: 10px;
             transform: rotate(1.5deg);
+        }
+
+        &:hover {
+            &::before, &::after {
+                display: none;
+            }
         }
     }
 
@@ -437,8 +430,8 @@ body {
 
         .fader {
             width: 90vw;
-            height: 400px;
             padding: 1rem 2rem;
+            min-height: 350px;
 
             .image-container {
                 background-position: center;
@@ -507,8 +500,21 @@ body {
 
 @media screen and (min-width: 900px) {
     .main .fader {
-        width: 90%;
+        // width: 90%;
         padding: 2rem 4rem;
+
+        &:hover {
+            width: 100%;
+            background: none;
+
+            .image-container {
+                min-height: 425px;
+            }
+
+            .project-description, .project-links {
+                display: none;
+            }
+        }
     }
 }
 
@@ -549,9 +555,6 @@ body {
     }
 
     .projects-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
         .image-container {
             &::before, &::after {
