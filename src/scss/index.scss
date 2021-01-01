@@ -52,22 +52,17 @@ body {
     width: 100vw;
     height: calc(#{$burger-dimensions} * 2.5);
     margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 99;
-    background: linear-gradient(to bottom, white 45%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,0) 100%);
+    z-index: 10;
 
     .contact-links {
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        top: 1.5rem;
+        top: 1rem;
         right: 0;
-        height: 5vh;
-        min-height: 3rem;
-        min-width: 12vw;
+        height: $contactHeight;
+        padding: 0.25rem 0;
         color: white;
         background: rgba(0,0,0,0.8);
         margin-top: 0;
@@ -75,20 +70,21 @@ body {
 
         span {
             cursor: pointer;
-            margin: 0 1rem;
+            margin: 0 10px;
+            font-size: 1.1em;
             &:first-child {
-                margin-left: 3rem;
+                margin-left: 1rem;
             }
             &:last-child {
-                margin-right: 3rem;
+                margin-right: 2rem;
             }
             &:hover {
-                color: $highlightLink;
+                color: $highlightFont;
             }
         }
 
         #email-address {
-            margin-left: 3rem;
+            margin-left: 2rem;
         }
 
         #github-link, #linkedin-link {
@@ -121,7 +117,7 @@ body {
 }
 
 .menu-container {
-    margin-top: 0;
+    margin-top: 1rem;
     margin-right: 2rem;
     position: absolute;
     left: 2rem;
@@ -144,13 +140,6 @@ body {
         clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
         z-index: 1;
 
-        #nixdev-logo {
-            display: none;
-            position: absolute;
-            top: 80px;
-            right: 295px;
-        }
-
         ul {
             margin-top: 20vh;
             margin-right: 20%;
@@ -160,8 +149,10 @@ body {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            width: 100%;
 
             .link {
+                position: relative;
                 transform: rotate(-4deg);
                 margin-bottom: 1.5rem;
                 cursor: pointer;
@@ -169,13 +160,18 @@ body {
                 font-weight: 800;
                 text-decoration: none;
                 color: white;
+                transition: margin-right 200ms ease-in-out;
+
                 &:hover {
-                    color: orange;
+                    text-shadow: 0 0 12px white;
                 }
             }
 
             .active-link {
                 color: $highlightFont;
+                &:hover {
+                    text-shadow: none;
+                }
             }
         }
     }
@@ -270,24 +266,48 @@ body {
 }
 
 .main {
-    margin-top: calc((#{$burger-dimensions} * 2) + 1rem);
+    position: relative;
+    margin-top: 0;
     width: calc(100vw - #{$menu-width});
-    height: calc(100vh - ((#{$burger-dimensions} * 2) + 1rem));
+    height: 100vh;
     margin-left: calc(#{$menu-width});
+    padding: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: calc(#{$contactHeight} * 2);
+        z-index: 1;
+        background: linear-gradient(to bottom, white 60%, rgba(0,0,0,0) 100%);
+    }
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
+    padding-top: calc(#{$contactHeight} * 2);
 }
 
 .home-container {
     display: flex;
-    column-gap: 20px;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-top: 3rem;
+    width: 100%;
+    height: 100%;
+    padding: 0 20%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     & > div {
+        margin-top: 0;
         flex-basis: 400px;
         flex-grow: 1;
         background-color: rgba($highlightFont,0.7);
@@ -303,13 +323,10 @@ body {
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding-bottom: 10vh;
 
     p {
         padding: 1rem;
-    }
-
-    & > * {
-        margin-bottom: 10vh;
     }
 }
 
@@ -325,14 +342,6 @@ body {
     display: none;
 }
 
-#third {
-    flex-basis: 65%;
-}
-
-#fourth {
-    flex-basis: 0;
-}
-
 .fader {
     position: relative;
     margin-top: 0;
@@ -340,10 +349,11 @@ body {
     padding: 1rem 4rem;
     opacity: 0;
     transform: translateX(25vw);
-    background-color: rgba($highlightFont, 0.18);
+    background-color: rgba($highlightFont, 0.65);
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     color: black;
     clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+    margin-top: 5vh;
 
     div .description {
         margin: 0;
@@ -438,6 +448,8 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        outline: 4px solid white;
+        outline-offset: 2px;
     }
 }
 
@@ -461,8 +473,12 @@ body {
     .main {
         width: 100vw;
         margin: 0 auto;
-        margin-top: calc((#{$burger-dimensions} * 1.9));
         padding: 0;
+
+        &::before {
+            width: 100%;
+            height: 90px;
+        }
 
         .fader {
             width: 90vw;
@@ -474,6 +490,10 @@ body {
                     display: none;
                 }
             }
+        }
+        
+        .container {
+            padding-top: 3rem;
         }
     }
 
@@ -496,6 +516,7 @@ body {
 
             ul {
                 margin-top: 0;
+                margin-right: 0;
                 transform: rotate(0);
                 .link {
                     transform: rotate(0);
@@ -534,6 +555,7 @@ body {
 }
 
 @media screen and (min-width: 900px) {
+
     .main .fader {
         padding: 2rem 4rem;
     }
@@ -553,7 +575,12 @@ body {
         height: calc(#{$burger-dimensions} * 3.5);
 
         .contact-links {
-            font-size: 1em;
+            height: calc(#{$contactHeight} * 1.25);
+            font-size: 2rem;
+            
+            #github-link, #linkedin-link {
+                width: 2.75rem;
+            }
         }
     }
 
@@ -566,12 +593,15 @@ body {
     }
 
     .main {
-        margin-top: calc((#{$burger-dimensions} * 6));
         margin-left: calc(#{$menu-width} * 2);
         width: calc(100vw - (#{$menu-width} * 2));
 
         .fader {
-            padding: 3rem 8rem;
+            padding: 3rem 5%;
+        }
+
+        &::before {
+            height: calc(#{$contactHeight} * 3);
         }
     }
 
@@ -600,6 +630,23 @@ body {
 
         ul {
             font-size: 1.5em;
+        }
+    }
+
+    .header {
+        .contact-links {
+            height: calc(#{$contactHeight} * 2);
+            font-size: 2.5rem;
+            
+            #github-link, #linkedin-link {
+                width: 3.75rem;
+            }
+        }
+    }
+
+    .main {
+        &::before {
+            height: calc(#{$contactHeight} * 4.5);
         }
     }
 }
