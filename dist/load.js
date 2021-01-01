@@ -67,15 +67,24 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 const hoverables = document.querySelectorAll('.fader')
 const imageContainer = document.querySelectorAll('.image-container')
-const imageTest = document.getElementById('green-oil')
+const fullScreen = document.querySelector('.fullscreen')
+const image = document.querySelector('.image')
 
-hoverables.forEach((el, i) => {
+imageContainer.forEach((el, i) => {
     const newImg = imageContainer[i].id
     console.log(imageContainer[i])
     el.addEventListener('mouseenter', () => {
-        imageContainer[i].style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
+        // el.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
+        // hoverables[i].classList.add('full-screen')
+        // hoverables[i].classList.add('full-screen')
+        image.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
+        fullScreen.style.display = 'flex';
+
     })
-    el.addEventListener('mouseleave', () => {
-        imageContainer[i].style.backgroundImage = `url(./assets/${newImg}.png)`
+    image.addEventListener('mouseleave', () => {
+        // el.style.backgroundImage = `url(./assets/${newImg}.png)`
+        // hoverables[i].classList.remove('full-screen')
+        fullScreen.style.display = 'none';
+
     })
 })

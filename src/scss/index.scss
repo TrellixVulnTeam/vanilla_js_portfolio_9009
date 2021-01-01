@@ -58,6 +58,21 @@ body {
     z-index: 99;
     background: linear-gradient(to bottom, white 45%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,0) 100%);
 
+    #nixdev-logo {
+        display: none;
+        position: fixed;
+        transform: rotate(-9deg);
+        top: 10px;
+        left: 117px;
+        width: 170px;
+        height: 100px;
+        z-index: 25;
+        background-image: url('./assets/nixdev-logo.png');
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     .contact-links {
         position: absolute;
         display: flex;
@@ -258,7 +273,6 @@ body {
     width: calc(100vw - #{$menu-width});
     height: calc(100vh - ((#{$burger-dimensions} * 2) + 1rem));
     margin-left: calc(#{$menu-width});
-    padding-bottom: 2rem;
     overflow: hidden;
 }
 
@@ -326,7 +340,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    // padding: 1rem 4rem;
+    padding: 1rem 4rem;
     opacity: 0;
     transform: translateX(25vw);
     background-color: rgba($highlightFont, 0.18);
@@ -341,8 +355,8 @@ body {
     .image-container {
         position: relative;
         height: 80%;
-        min-height: calc(100% - 13rem);
-        margin: 2rem auto;
+        min-height: 70%;
+        margin: 1rem auto 0.5rem;
         align-self: center;
         justify-self: center;
         width: 100%;
@@ -409,6 +423,28 @@ body {
 .appear {
     transform: translateX(0);
     opacity: 1;
+}
+
+.fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.9);
+    z-index: 99;
+    margin-top: 0;
+
+    .image {
+        width: 60%;
+        height: 75%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -504,16 +540,43 @@ body {
         padding: 2rem 4rem;
 
         &:hover {
-            width: 100%;
-            background: none;
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            // right: 0;
+            // bottom: 0;
+            // width: 100%;
+            // margin: 0 auto;
+            // background: rgba(0,0,0,0.85);
+            // outline: 50vw solid rgba(0,0,0,0.85);
+            // z-index: 99;
+            // clip-path: none;
 
-            .image-container {
-                min-height: 425px;
-            }
+            // .image-container {
+            //     min-height: 425px;
+            // }
 
-            .project-description, .project-links {
-                display: none;
-            }
+            // .project-description, .project-links {
+            //     display: none;
+            // }
+        }
+    }
+
+    .full-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // width: 100%;
+        margin: 0 auto;
+        background: rgba(0,0,0,0.85);
+        outline: 50vw solid rgba(0,0,0,0.85);
+        z-index: 99;
+        clip-path: none;
+
+        .project-description, .project-links {
+            display: none;
         }
     }
 }
