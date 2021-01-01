@@ -58,47 +58,42 @@ body {
     z-index: 99;
     background: linear-gradient(to bottom, white 45%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,0) 100%);
 
-    #nixdev-logo {
-        display: none;
-        position: fixed;
-        transform: rotate(-9deg);
-        top: 10px;
-        left: 117px;
-        width: 170px;
-        height: 100px;
-        z-index: 25;
-        background-image: url('./assets/nixdev-logo.png');
-        background-size: 70%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
     .contact-links {
         position: absolute;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         top: 1.5rem;
         right: 0;
-        height: 50%;
+        height: 5vh;
+        min-height: 3rem;
+        min-width: 12vw;
         color: white;
         background: rgba(0,0,0,0.8);
         margin-top: 0;
-        padding: 0.5rem 1rem 0.5rem 2.5rem;
         clip-path: polygon(1.5% 0, 100% 0, 100% 100%, 0% 100%);
 
         span {
             cursor: pointer;
+            margin: 0 1rem;
+            &:first-child {
+                margin-left: 3rem;
+            }
+            &:last-child {
+                margin-right: 3rem;
+            }
             &:hover {
                 color: $highlightLink;
             }
         }
 
+        #email-address {
+            margin-left: 3rem;
+        }
+
         #github-link, #linkedin-link {
             height: 100%;
             width: 1.75rem;
-            margin: auto;
-            margin-left: 0.5rem;
             background-image: url('./assets/github-logo.png');
             background-size: 100%;
             background-repeat: no-repeat;
@@ -139,19 +134,26 @@ body {
         bottom: 0;
         opacity: 1;
         left: 0;
-        width: $menu-width;
-        // min-width: 10vw;
+        width: calc(#{$menu-width} * 1.2);
         margin-top: 0;
         transition: right 400ms ease-out, opacity 0.5s ease;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: flex-start;
         background: rgba(0,0,0,0.85);
         clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
         z-index: 1;
 
+        #nixdev-logo {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 295px;
+        }
+
         ul {
             margin-top: 20vh;
+            margin-right: 20%;
             list-style: none;
             font-size: 1.5em;
             transform: rotate(4deg);
@@ -163,7 +165,6 @@ body {
                 transform: rotate(-4deg);
                 margin-bottom: 1.5rem;
                 cursor: pointer;
-                // font-family: 'Codystar', cursive;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 800;
                 text-decoration: none;
@@ -336,10 +337,6 @@ body {
     position: relative;
     margin-top: 0;
     width: 60%;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     padding: 1rem 4rem;
     opacity: 0;
     transform: translateX(25vw);
@@ -354,15 +351,11 @@ body {
     
     .image-container {
         position: relative;
-        height: 80%;
-        min-height: 70%;
-        margin: 1rem auto 0.5rem;
-        align-self: center;
-        justify-self: center;
+        margin: 1rem auto 2.5rem;
         width: 100%;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         background-color: rgb(247, 247, 247);
-        background-size: 100% auto;
+        background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
         transition: width 200ms ease-in 200ms;
@@ -400,7 +393,7 @@ body {
         justify-content: space-around;
 
         a {
-            width: 35%;
+            min-width: 35%;
             height: 2rem;
             display: flex;
             justify-content: center;
@@ -410,6 +403,7 @@ body {
             padding: 1.5rem 2rem;
             margin: 0;
             color: black;
+            text-align: center;
             text-decoration: none;
 
             &:hover {
@@ -434,7 +428,7 @@ body {
     bottom: 0;
     justify-content: center;
     align-items: center;
-    background: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.9);
     z-index: 99;
     margin-top: 0;
 
@@ -458,6 +452,12 @@ body {
         opacity: 0;
     }
 
+    .fullscreen .image {
+        width: 90vw;
+        height: 80vh;
+        max-height: 240px;
+    }
+
     .main {
         width: 100vw;
         margin: 0 auto;
@@ -467,7 +467,6 @@ body {
         .fader {
             width: 90vw;
             padding: 1rem 2rem;
-            min-height: 350px;
 
             .image-container {
                 background-position: center;
@@ -536,48 +535,7 @@ body {
 
 @media screen and (min-width: 900px) {
     .main .fader {
-        // width: 90%;
         padding: 2rem 4rem;
-
-        &:hover {
-            // position: fixed;
-            // top: 0;
-            // left: 0;
-            // right: 0;
-            // bottom: 0;
-            // width: 100%;
-            // margin: 0 auto;
-            // background: rgba(0,0,0,0.85);
-            // outline: 50vw solid rgba(0,0,0,0.85);
-            // z-index: 99;
-            // clip-path: none;
-
-            // .image-container {
-            //     min-height: 425px;
-            // }
-
-            // .project-description, .project-links {
-            //     display: none;
-            // }
-        }
-    }
-
-    .full-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        // width: 100%;
-        margin: 0 auto;
-        background: rgba(0,0,0,0.85);
-        outline: 50vw solid rgba(0,0,0,0.85);
-        z-index: 99;
-        clip-path: none;
-
-        .project-description, .project-links {
-            display: none;
-        }
     }
 }
 
@@ -603,7 +561,7 @@ body {
         width: calc(#{$menu-width} * 2);
 
         ul {
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
     }
 
@@ -623,7 +581,6 @@ body {
             &::before, &::after {
                 bottom: 10px;
                 width: 75%;
-                // height: 60px;
             }
     
             &::before {
@@ -633,6 +590,16 @@ body {
             &::after {
                 transform: rotate(1deg);
             }
+        }
+    }
+}
+
+@media screen and (min-width: 3000px) {
+    .menu-container .menu {
+        width: calc(#{$menu-width} * 3);
+
+        ul {
+            font-size: 1.5em;
         }
     }
 }

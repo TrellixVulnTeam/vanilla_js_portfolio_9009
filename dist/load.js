@@ -74,17 +74,10 @@ imageContainer.forEach((el, i) => {
     const newImg = imageContainer[i].id
     console.log(imageContainer[i])
     el.addEventListener('mouseenter', () => {
-        // el.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
-        // hoverables[i].classList.add('full-screen')
-        // hoverables[i].classList.add('full-screen')
         image.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
         fullScreen.style.display = 'flex';
-
     })
     image.addEventListener('mouseleave', () => {
-        // el.style.backgroundImage = `url(./assets/${newImg}.png)`
-        // hoverables[i].classList.remove('full-screen')
         fullScreen.style.display = 'none';
-
     })
 })

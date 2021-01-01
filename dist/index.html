@@ -11,29 +11,29 @@
 </head>
 <body>
     <div class='header'>
-        <div id='nixdev-logo'></div>
         <div class='menu-container'>
             <input class='toggler' type='checkbox'/>
             <div class='burger-menu'><div></div></div>
             <div class='menu'>
+                <div id='nixdev-logo'><img src='./assets/nixdev-logo.png' alt='logo' width='400%' /></div>
                 <ul>
                     <li class='link active-link' id='link-home' onClick="navigateHome()">ABOUT</li>
                     <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
-                    <!-- <li class='link' id='link-projects' onClick="navigateProjects()">CV</li> -->
                     <li class='link' id='link-contact' onClick="navigateContact()">CONTACT</li>
                 </ul>
             </div>
             <div class='shroud'></div>
         </div>
         <div class='contact-links'>
-            <span id='emailAddress' onClick="copyEmail()">mpnix@protonmail.com</span>
+            <span id='email-address'>mpnix@protonmail.com</span>
             <span id='github-link'></span>
             <span id='linkedin-link'></span>
-            <!-- <img src='./assets/linkedin-logo.png' alt='linked in' /> -->
         </div>
     </div>
     <div class='main'>
+
 <!-- Home page -->
+
         <div id='home' class='container home-container'>
             <h1>Latest</h1>
             <div class='text-container' id='first'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</div>
@@ -41,17 +41,18 @@
             <div class='text-container' id='third'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
             <div class='text-container' id='fourth'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
         </div>
+
 <!-- Projects page -->
+
         <div class='fullscreen'><div class="image"></div></div>
         <div id='projects' class='container projects-container'>
-            <!-- <h2>Projects</h2> -->
             <div class='fader'>
                 <div class='project-description'>
                     <h3>Green Oil</h3>
                     <div class='description'>e-commerce website</div>
                 </div>
-                <div class='image-container' id='green-oil' style='background-image: url(./assets/green-oil.png)'>
-                    <!-- <img id='green-oil' class='preview-image' src='./assets/green-oil.png' alt='e-commerce website with PayPal integration' width="100%" /> -->
+                <div class='image-container' id='green-oil'>
+                    <img src='./assets/green-oil.png' alt='e-commerce website with PayPal integration' width='100%'/>
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/green-oil">VIEW CODE</a>
@@ -64,8 +65,8 @@
                     <h3>MACA</h3>
                     <div class='description'>Website for vegan animal activism group</div>
                 </div>
-                <div class='image-container' id='maca' style='background-image: url(./assets/maca.png)'>
-                    <!-- <img class='preview-image' src='./assets/maca-home-page.png' alt='Mancester Animal Climate Action' width="100%" /> -->
+                <div class='image-container' id='maca'>
+                    <img src='./assets/maca.png' alt='Mancester Animal Climate Action' width='100%' />
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/maca-website">VIEW CODE</a>
@@ -78,8 +79,8 @@
                     <h3>Medical Illustration Database</h3>
                     <div class='description'>Database built using ReactJS and Postgresql</div>
                 </div>
-                <div class='image-container' id='record-keeper' style='background-image: url(./assets/record-keeper.png)'>
-                    <!-- <img class='preview-image' src='./assets/recordkeeper/record-keeper-02.png' alt='database built with ReactJS and Postgresql' width="100%" /> -->
+                <div class='image-container' id='record-keeper'>
+                    <img src='./assets/recordkeeper/record-keeper-02.png' alt='database built with ReactJS and Postgresql' width='100%' />
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/recordkeeper">VIEW CODE</a>
@@ -89,6 +90,7 @@
         </div>
 
 <!-- Contact page -->
+
         <div id='contact' class='container'>
             <h1>Contact</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
