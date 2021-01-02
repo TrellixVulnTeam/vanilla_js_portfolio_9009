@@ -21,7 +21,6 @@
                     <li class='link' id='link-contact' onClick="navigateContact()">CONTACT</li>
                 </ul>
             </div>
-            <div class='shroud'></div>
         </div>
         <div class='contact-links'>
             <span id='email-address'><a href='mailto:mpnix@protonmail.com'>mpnix@protonmail.com</a></span>
@@ -34,14 +33,17 @@
 <!-- Home page -->
 
         <div id='home' class='container home-container'>
-            <div class='text-container' id='first'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</div>
-            <div class='text-container' id='second'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
-            <div class='text-container' id='third'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum debitis dolores suscipit explicabo laudantium ducimus temporibus blanditiis, esse quasi.</div>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt velit blanditiis quam non libero cupiditate.</div>
         </div>
 
 <!-- Projects page -->
 
-        <div class='fullscreen'><div class="image"></div></div>
+        <div class='fullscreen'>
+            <div class="image"></div>
+            <div class="close-fullscreen" onClick="closeScreen()">X</div>
+        </div>
         <div id='projects' class='container projects-container'>
             <div class='fader'>
                 <div class='project-description'>
@@ -49,7 +51,7 @@
                     <div class='description'>e-commerce website</div>
                 </div>
                 <div class='image-container' id='green-oil'>
-                    <img src='./assets/green-oil.png' alt='e-commerce website with PayPal integration' width='100%'/>
+                    <img src='./assets/green-oil.png' alt='e-commerce website with PayPal integration' width='100%' />
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/green-oil">VIEW CODE</a>

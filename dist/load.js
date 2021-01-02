@@ -7,7 +7,7 @@ const linkContact = document.getElementById('link-contact')
 const faders = document.querySelectorAll('.fader')
 
 const navigateHome = () => {
-    home.style.display = 'grid'
+    home.style.display = 'flex'
     projects.style.display = 'none'
     contact.style.display = 'none'
 
@@ -41,7 +41,7 @@ const navigateProjects = () => {
 const navigateContact = () => {
     home.style.display = 'none'
     projects.style.display = 'none'
-    contact.style.display = 'block'
+    contact.style.display = 'flex'
 
     linkHome.classList.remove('active-link')
     linkProjects.classList.remove('active-link')
@@ -81,3 +81,9 @@ imageContainer.forEach((el, i) => {
         fullScreen.style.display = 'none';
     })
 })
+
+const closeFullScreen = document.querySelector('.close-fullscreen')
+
+const closeScreen = () => {
+    fullScreen.style.display = 'none';
+}

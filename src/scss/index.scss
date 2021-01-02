@@ -16,16 +16,11 @@
     box-sizing: border-box;
 }
 
-* + * {
-    margin-top: 1rem;
-}
-
 html, body {
     overflow-x: hidden;
 }
 
 body {
-    margin-top: 0;
     font-family: 'Montserrat', sans-serif;
 
     h1 {
@@ -51,7 +46,6 @@ body {
     left: 0;
     width: 100vw;
     height: calc(#{$burger-dimensions} * 2.5);
-    margin: 0;
     z-index: 10;
 
     .contact-links {
@@ -65,7 +59,6 @@ body {
         padding: 0.25rem 0;
         color: white;
         background: rgba(0,0,0,0.8);
-        margin-top: 0;
         clip-path: polygon(1.5% 0, 100% 0, 100% 100%, 0% 100%);
 
         span {
@@ -131,7 +124,6 @@ body {
         opacity: 1;
         left: 0;
         width: calc(#{$menu-width} * 1.2);
-        margin-top: 0;
         transition: right 400ms ease-out, opacity 0.5s ease;
         display: flex;
         justify-content: flex-end;
@@ -154,7 +146,7 @@ body {
             .link {
                 position: relative;
                 transform: rotate(-4deg);
-                margin-bottom: 1.5rem;
+                margin-bottom: 2.5rem;
                 cursor: pointer;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 800;
@@ -176,19 +168,18 @@ body {
         }
     }
 
-    .shroud {
-        position: fixed;
-        display: none;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: white;
-        margin-top: 0;
-        opacity: 0;
-        z-index: 0;
-        transition: opacity 600ms ease;
-    }
+    // .shroud {
+    //     position: fixed;
+    //     display: none;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     background-color: white;
+    //     opacity: 0;
+    //     z-index: 0;
+    //     transition: opacity 600ms ease;
+    // }
 
     .toggler {
         position: absolute;
@@ -219,16 +210,15 @@ body {
                 opacity: 1;
             }
 
-            & ~ .shroud {
-                display: block;
-                opacity: 0.8;
-            }
+            // & ~ .shroud {
+            //     display: block;
+            //     opacity: 0.8;
+            // }
         }
     }
     
     .burger-menu {
         display: none;
-        margin-top: 0;
         position: absolute;
         top: 0;
         left: 0;
@@ -267,16 +257,15 @@ body {
 
 .main {
     position: relative;
-    margin-top: 0;
     width: calc(100vw - #{$menu-width});
     height: 100vh;
-    margin-left: calc(#{$menu-width});
-    padding: 0;
+    margin-left: $menu-width;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 
+//scroll fader using pseudo element
     &::before {
         content: '';
         position: absolute;
@@ -290,44 +279,22 @@ body {
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding-top: calc(#{$contactHeight} * 2);
-}
-
-.home-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-    width: 100%;
-    height: 100%;
-    padding: 0 20%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    & > div {
-        margin-top: 0;
-        flex-basis: 400px;
-        flex-grow: 1;
-        background-color: rgba($highlightFont,0.7);
-        padding: 1rem;
-    }
-}
-
-.projects-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    padding-top: $contactHeight;
+    height: calc(100% - 5rem);
     width: 100%;
+    margin-top: 5rem;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-bottom: 10vh;
+    gap: 4rem;
+}
 
-    p {
+.home-container > div {
+        width: 80%;
+        background-color: rgba($highlightFont,0.7);
         padding: 1rem;
-    }
 }
 
 #home {
@@ -344,31 +311,20 @@ body {
 
 .fader {
     position: relative;
-    margin-top: 0;
     width: 60%;
-    padding: 1rem 4rem;
+    padding: 1.5rem 4rem;
     opacity: 0;
-    transform: translateX(25vw);
-    background-color: rgba($highlightFont, 0.65);
-    transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     color: black;
-    clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
-    margin-top: 5vh;
-
-    div .description {
-        margin: 0;
-    }
+    background-color: rgba($highlightFont, 0.65);
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+    transform: translateX(25vw);
+    transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
     .image-container {
         position: relative;
-        margin: 1rem auto 2.5rem;
-        width: 100%;
+        background: white;
+        margin: 1rem auto 1.5rem;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
-        background-color: rgb(247, 247, 247);
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        transition: width 200ms ease-in 200ms;
 
         &::before, &::after {
             position: absolute;
@@ -403,7 +359,7 @@ body {
         justify-content: space-around;
 
         a {
-            min-width: 35%;
+            max-width: 35%;
             height: 2rem;
             display: flex;
             justify-content: center;
@@ -411,7 +367,6 @@ body {
             background: rgba(0,0,0,0.05);
             border: 1px solid black;
             padding: 1.5rem 2rem;
-            margin: 0;
             color: black;
             text-align: center;
             text-decoration: none;
@@ -440,7 +395,6 @@ body {
     align-items: center;
     background-color: rgba(0,0,0,0.9);
     z-index: 99;
-    margin-top: 0;
 
     .image {
         width: 60%;
@@ -450,6 +404,20 @@ body {
         background-position: center;
         outline: 4px solid white;
         outline-offset: 2px;
+    }
+
+    .close-fullscreen {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
     }
 }
 
@@ -464,10 +432,16 @@ body {
         opacity: 0;
     }
 
-    .fullscreen .image {
-        width: 90vw;
-        height: 80vh;
-        max-height: 240px;
+    .fullscreen {
+        .image {
+            width: 90vw;
+            height: 80vh;
+            max-height: 240px;
+        }
+
+        .close-fullscreen {
+            display: flex;
+        }
     }
 
     .main {
@@ -485,13 +459,12 @@ body {
             padding: 1rem 2rem;
 
             .image-container {
-                background-position: center;
                 &::before, &::after {
                     display: none;
                 }
             }
         }
-        
+
         .container {
             padding-top: 3rem;
         }
@@ -515,7 +488,6 @@ body {
             align-items: center;
 
             ul {
-                margin-top: 0;
                 margin-right: 0;
                 transform: rotate(0);
                 .link {
@@ -554,13 +526,6 @@ body {
     }
 }
 
-@media screen and (min-width: 900px) {
-
-    .main .fader {
-        padding: 2rem 4rem;
-    }
-}
-
 @media screen and (min-width: 1900px) {
 
     body {
@@ -595,10 +560,6 @@ body {
     .main {
         margin-left: calc(#{$menu-width} * 2);
         width: calc(100vw - (#{$menu-width} * 2));
-
-        .fader {
-            padding: 3rem 5%;
-        }
 
         &::before {
             height: calc(#{$contactHeight} * 3);
