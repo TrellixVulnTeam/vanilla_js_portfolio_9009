@@ -255,7 +255,7 @@ body {
         top: 0;
         left: 0;
         width: 90%;
-        height: calc(#{$contactHeight} * 3.5);
+        height: calc(#{$contactHeight} * 2.75);
         z-index: 1;
         background: linear-gradient(to bottom, white 60%, rgba(0,0,0,0) 100%);
     }
@@ -268,14 +268,13 @@ body {
     padding: $contactHeight 0;
     height: calc(100% - 5rem);
     width: 100%;
-    margin-top: 7.5rem;
+    margin-top: 5rem;
     overflow-x: hidden;
     gap: 4rem;
 }
 
 .home-container, .contact-container {
     height: 70%;
-    // margin-bottom: 20%;
     justify-content: center;
     & > div {
         width: 80%;
