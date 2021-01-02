@@ -268,15 +268,20 @@ body {
     padding: $contactHeight 0;
     height: calc(100% - 5rem);
     width: 100%;
-    margin-top: 6.5rem;
+    margin-top: 7.5rem;
     overflow-x: hidden;
     gap: 4rem;
 }
 
-.home-container > div, .contact-container > div {
-    width: 80%;
-    background-color: rgba($highlightFont,0.7);
-    padding: 1rem;
+.home-container, .contact-container {
+    height: 70%;
+    margin-bottom: 20%;
+    justify-content: center;
+    & > div {
+        width: 80%;
+        background-color: rgba($highlightFont,0.7);
+        padding: 1rem;
+    }
 }
 
 #home {
