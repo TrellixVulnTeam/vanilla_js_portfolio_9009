@@ -124,7 +124,7 @@ body {
         min-height: 100vh;
         opacity: 1;
         left: 0;
-        width: $menu-width;
+        width: calc(#{$menu-width} * 0.8);
         transition: right 400ms ease-out, opacity 0.5s ease;
         display: flex;
         justify-content: flex-end;
@@ -137,7 +137,7 @@ body {
             margin-top: 20vh;
             margin-right: 25%;
             list-style: none;
-            font-size: 1.5em;
+            font-size: 1rem;
             transform: rotate(4deg);
             display: flex;
             flex-direction: column;
@@ -532,6 +532,14 @@ body {
 @media screen and (min-width: 900px) {
     .fader {
         width: 60%;
+    }
+
+    .menu-container .menu {
+        width: calc(#{$menu-width} * 1.2);
+
+        ul {
+            font-size: 1.5rem;
+        }
     }
 }
 
