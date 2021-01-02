@@ -411,13 +411,6 @@ body {
     align-items: center;
     background-color: rgba(0,0,0,0.9);
     z-index: 99;
-    
-    .action-message {
-        color: white;
-        position: fixed;
-        margin: auto;
-        z-index: -1;
-    }
 
     .image {
         width: 75vw;
@@ -454,6 +447,13 @@ body {
     .fullscreen {
         .image {
             opacity: 1;
+        }
+
+        .action-message {
+            color: white;
+            position: fixed;
+            margin: auto;
+            z-index: -1;
         }
     }
 }
