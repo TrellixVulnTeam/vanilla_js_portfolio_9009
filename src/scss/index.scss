@@ -64,7 +64,7 @@ body {
         span {
             cursor: pointer;
             margin: 0 10px;
-            font-size: 1.1em;
+            font-size: 1rem;
             &:first-child {
                 margin-left: 1rem;
             }
@@ -113,28 +113,29 @@ body {
     margin-top: 1rem;
     margin-right: 2rem;
     position: absolute;
-    left: 2rem;
+    left: 1rem;
     width: calc(#{$burger-dimensions} * 1.5);
     height: calc(#{$burger-dimensions} * 1.5);
 
     .menu {
         position: fixed;
         top: 0;
-        bottom: 0;
+        height: 2000px;
+        min-height: 100vh;
         opacity: 1;
         left: 0;
-        width: calc(#{$menu-width} * 1.2);
+        width: $menu-width;
         transition: right 400ms ease-out, opacity 0.5s ease;
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
         background: rgba(0,0,0,0.85);
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
         z-index: 1;
 
         ul {
             margin-top: 20vh;
-            margin-right: 20%;
+            margin-right: 25%;
             list-style: none;
             font-size: 1.5em;
             transform: rotate(4deg);
@@ -168,19 +169,6 @@ body {
         }
     }
 
-    // .shroud {
-    //     position: fixed;
-    //     display: none;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     background-color: white;
-    //     opacity: 0;
-    //     z-index: 0;
-    //     transition: opacity 600ms ease;
-    // }
-
     .toggler {
         position: absolute;
         width: 100%;
@@ -209,11 +197,6 @@ body {
                 right: 0;
                 opacity: 1;
             }
-
-            // & ~ .shroud {
-            //     display: block;
-            //     opacity: 0.8;
-            // }
         }
     }
     
@@ -272,7 +255,7 @@ body {
         top: 0;
         left: 0;
         width: 90%;
-        height: calc(#{$contactHeight} * 2);
+        height: calc(#{$contactHeight} * 3.5);
         z-index: 1;
         background: linear-gradient(to bottom, white 60%, rgba(0,0,0,0) 100%);
     }
@@ -282,19 +265,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: $contactHeight;
+    padding: $contactHeight 0;
     height: calc(100% - 5rem);
     width: 100%;
-    margin-top: 5rem;
-    overflow-y: scroll;
+    margin-top: 6.5rem;
     overflow-x: hidden;
     gap: 4rem;
 }
 
-.home-container > div {
-        width: 80%;
-        background-color: rgba($highlightFont,0.7);
-        padding: 1rem;
+.home-container > div, .contact-container > div {
+    width: 80%;
+    background-color: rgba($highlightFont,0.7);
+    padding: 1rem;
 }
 
 #home {
@@ -311,20 +293,33 @@ body {
 
 .fader {
     position: relative;
-    width: 60%;
-    padding: 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding: 1.5rem 2.5rem;
     opacity: 0;
     color: black;
     background-color: rgba($highlightFont, 0.65);
-    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+    clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
     transform: translateX(25vw);
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
+    .project-description {
+        width: 90%;
+    }
+
     .image-container {
         position: relative;
         background: white;
         margin: 1rem auto 1.5rem;
+        width: 90%;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
+        z-index: 0;
+
+        img {
+            height: 100%;
+        }
 
         &::before, &::after {
             position: absolute;
@@ -357,6 +352,7 @@ body {
     .project-links {
         display: flex;
         justify-content: space-around;
+        width: 90%;
 
         a {
             max-width: 35%;
@@ -397,8 +393,10 @@ body {
     z-index: 99;
 
     .image {
-        width: 60%;
-        height: 75%;
+        width: 75vw;
+        height: 50vw;
+        max-width: 75vw;
+        max-height: 75vh;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -407,15 +405,15 @@ body {
     }
 
     .close-fullscreen {
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
         top: 15px;
         right: 15px;
-        width: 30px;
-        height: 30px;
-        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+        font-size: 3rem;
         color: white;
         cursor: pointer;
     }
@@ -433,40 +431,41 @@ body {
     }
 
     .fullscreen {
-        .image {
-            width: 90vw;
-            height: 80vh;
-            max-height: 240px;
-        }
 
         .close-fullscreen {
-            display: flex;
+            width: 40px;
+            height: 40px;
+            font-size: 2rem;
         }
     }
 
     .main {
         width: 100vw;
         margin: 0 auto;
-        padding: 0;
 
         &::before {
+            display: none;
             width: 100%;
-            height: 90px;
+        }
+
+        .container {
+            margin: 0 auto;
+            height: 100%;
+            padding: 4rem 0;
         }
 
         .fader {
             width: 90vw;
-            padding: 1rem 2rem;
 
             .image-container {
                 &::before, &::after {
                     display: none;
                 }
-            }
-        }
 
-        .container {
-            padding-top: 3rem;
+                img {
+                    height: 100%;
+                }
+            }
         }
     }
 
@@ -540,8 +539,11 @@ body {
         height: calc(#{$burger-dimensions} * 3.5);
 
         .contact-links {
-            height: calc(#{$contactHeight} * 1.25);
-            font-size: 2rem;
+            height: calc(#{$contactHeight} * 1.8);
+
+            span {
+                font-size: 2rem;
+            }
             
             #github-link, #linkedin-link {
                 width: 2.75rem;
@@ -550,7 +552,7 @@ body {
     }
 
     .menu-container .menu {
-        width: calc(#{$menu-width} * 2);
+        width: calc(#{$menu-width} * 1.8);
 
         ul {
             font-size: 1.2em;
@@ -562,11 +564,15 @@ body {
         width: calc(100vw - (#{$menu-width} * 2));
 
         &::before {
-            height: calc(#{$contactHeight} * 3);
+            height: calc(#{$contactHeight} * 4);
         }
     }
 
     .projects-container {
+
+        .fader {
+            margin-top: 4rem;
+        }
 
         .image-container {
             &::before, &::after {
@@ -587,7 +593,7 @@ body {
 
 @media screen and (min-width: 3000px) {
     .menu-container .menu {
-        width: calc(#{$menu-width} * 3);
+        width: calc(#{$menu-width} * 2);
 
         ul {
             font-size: 1.5em;
@@ -607,7 +613,11 @@ body {
 
     .main {
         &::before {
-            height: calc(#{$contactHeight} * 4.5);
+            height: calc(#{$contactHeight} * 6.5);
+        }
+
+        .fader {
+            margin-top: 10rem;
         }
     }
 }
