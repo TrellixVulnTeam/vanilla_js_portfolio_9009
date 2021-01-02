@@ -327,6 +327,44 @@ body {
     
     .project-description {
         width: 90%;
+        position: relative;
+        background-color: rgba(255,255,255,0);
+        outline: 10px solid rgba(255,255,255,0);
+        transition: background-color 600ms ease, outline 500ms ease;
+
+        &:hover {
+            position: absolute;
+            text-align: center;
+            padding-top: 10%;
+            width: 80%;
+            height: 73%;
+            background-color: rgba($highlightFont, 0.05);
+            outline: 10px solid rgba($highlightFont, 0.05);
+            z-index: 50;
+            white-space: normal;
+            overflow: visible;
+
+            & + .image-container {
+                margin-top: 3.65rem;
+                opacity: 0.05;
+            }
+
+            .description {
+                text-align: center;
+                font-size: 1.2em;
+                margin-top: 2rem;
+                white-space: normal;
+                max-height: 70%;
+                overflow-y: auto;
+                transition: margin-top 600ms ease-in-out;
+            }
+        }
+
+        .description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     .image-container {
@@ -451,7 +489,6 @@ body {
 
         .action-message {
             color: white;
-            position: fixed;
             margin: auto;
             z-index: -1;
         }
@@ -470,10 +507,6 @@ body {
     }
 
     .fullscreen {
-
-        // .image {
-        //     opacity: 1;
-        // }
 
         .close-fullscreen {
             width: 40px;
@@ -631,6 +664,7 @@ body {
         .fader {
             width: 75%;
             margin-top: 4rem;
+            padding: 2.5rem;
 
             .image-container {
                 &::before, &::after {
@@ -658,6 +692,11 @@ body {
 }
 
 @media screen and (min-width: 3000px) {
+
+    body {
+        font-size: 3rem;
+    }
+
     .menu-container .menu {
         width: calc(#{$menu-width} * 2);
 
@@ -685,6 +724,7 @@ body {
         }
 
         .fader {
+            padding: 3rem 4rem;
             margin-top: 10rem;
         }
     }

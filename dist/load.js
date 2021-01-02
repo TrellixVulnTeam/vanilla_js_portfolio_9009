@@ -87,3 +87,9 @@ const closeFullScreen = document.querySelector('.close-fullscreen')
 const closeScreen = () => {
     fullScreen.style.display = 'none'
 }
+
+document.addEventListener('keyup', (e) => {
+    if (e.key === "Escape" ) {
+        fullScreen.style.display = 'none'
+    }
+})
