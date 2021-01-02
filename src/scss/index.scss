@@ -535,10 +535,10 @@ body {
     }
 
     .menu-container .menu {
-        width: calc(#{$menu-width} * 1.2);
+        width: calc(#{$menu-width} * 1);
 
         ul {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -570,10 +570,10 @@ body {
     }
 
     .menu-container .menu {
-        width: calc(#{$menu-width} * 1.8);
+        width: calc(#{$menu-width} * 1.5);
 
         ul {
-            font-size: 1.2em;
+            font-size: 1.6rem;
         }
     }
 
