@@ -75,15 +75,15 @@ imageContainer.forEach((el, i) => {
     console.log(imageContainer[i])
     el.addEventListener('mouseenter', () => {
         image.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
-        fullScreen.style.display = 'flex';
+        fullScreen.style.display = 'flex'
     })
     image.addEventListener('mouseleave', () => {
-        fullScreen.style.display = 'none';
+        fullScreen.style.display = 'none'
     })
 })
 
 const closeFullScreen = document.querySelector('.close-fullscreen')
 
 const closeScreen = () => {
-    fullScreen.style.display = 'none';
+    fullScreen.style.display = 'none'
 }
