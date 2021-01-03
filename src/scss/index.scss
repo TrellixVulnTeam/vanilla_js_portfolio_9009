@@ -48,7 +48,8 @@ body {
     height: calc(#{$burger-dimensions} * 2.5);
     z-index: 10;
 
-    .contact-links {
+    
+    .banner {
         position: absolute;
         display: flex;
         justify-content: center;
@@ -56,55 +57,68 @@ body {
         top: 1rem;
         right: 0;
         height: $contactHeight;
-        padding: 0.25rem 0;
+        padding: 0;
         color: white;
-        background: rgba(0,0,0,0.8);
-        clip-path: polygon(1.5% 0, 100% 0, 100% 100%, 0% 100%);
-
-        span {
-            cursor: pointer;
+        background: $header-bg-color;
+        clip-path: polygon(1% 0, 100% 0, 100% 100%, 0 100%);
+        
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 80%;
             margin: 0 10px;
-            font-size: 1rem;
-            &:first-child {
-                margin-left: 1rem;
-            }
-            &:last-child {
-                margin-right: 2rem;
-            }
-            &:hover {
-                color: $highlightFont;;
+            &::before {
+                content: '';
+                background: white;
+                position: absolute;
+                top: -20%;
+                right: -5%;
+                width: 2px;
+                height: 140%;
+                transform: rotate(5deg);
             }
         }
 
-        #email-address {
-            margin-left: 2rem;
-        }
-
-        #github-link, #linkedin-link {
+        .contact-links {
+            display: flex;
+            align-items: center;
             height: 100%;
-            width: 1.75rem;
-            background-image: url('./assets/github-logo.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
 
-            &:hover {
-                background-image: url('./assets/github-logo-hover.png');
+            span {
+                cursor: pointer;
+                margin: 0 10px;
+                font-size: 1.2rem;
+
+                &:first-child {
+                    margin-left: 20px;
+                }
+
+                &:last-child {
+                    margin-right: 20px;
+                }
             }
-        }
 
-        #linkedin-link {
-            background-image: url('./assets/linkedin-logo.png');
+            #github-link, #linkedin-link {
+                height: 100%;
+                width: 1.75rem;
+                background-image: url('./assets/github-logo.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
 
-            &:hover {
-                background-image: url('./assets/linkedin-logo-hover.png');
+                &:hover {
+                    background-image: url('./assets/github-logo-hover.png');
+                }
             }
-        }
 
-        img {
-            margin: auto 0;
-            margin-left: 0.5rem;
-            height: 100%;
+            #linkedin-link {
+                background-image: url('./assets/linkedin-logo.png');
+
+                &:hover {
+                    background-image: url('./assets/linkedin-logo-hover.png');
+                }
+            }
         }
     }
 }
@@ -326,11 +340,18 @@ body {
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
     .project-description {
-        width: 90%;
+        max-width: 90%;
+        align-self: flex-start;
+        margin-left: 5%;
         position: relative;
         background-color: rgba(255,255,255,0);
         outline: 10px solid rgba(255,255,255,0);
         transition: background-color 600ms ease, outline 500ms ease;
+
+        & > div {
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
 
         &:hover {
             position: absolute;
@@ -467,7 +488,7 @@ body {
     }
 
     .close-fullscreen {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         position: absolute;
@@ -492,6 +513,17 @@ body {
             margin: auto;
             z-index: -1;
         }
+
+        .close-fullscreen {
+            display: flex;
+        }
+    }
+
+}
+
+@media screen and (max-width: 250px) {
+    .logo {
+        width: 0;
     }
 }
 
@@ -499,12 +531,26 @@ body {
 
     .header {
         height: calc(#{$burger-dimensions} * 2);
+
+        .banner {
+            top: 0;
+            height: calc(#{$contactHeight} * 1.5);
+            width: 100vw;
+            clip-path: none;
+            justify-content: flex-end;
+
+            .logo {
+                &::before {
+                    display: none;
+                }
+            }
+            .contact-links {
+                display: none;
+                width: 0;
+            }
+        }
     }
 
-    .contact-links {
-        display: none;
-        opacity: 0;
-    }
 
     .fullscreen {
 
@@ -583,13 +629,16 @@ body {
 
             div {
                 height: 5px;
+                background-color: white;
                 
                 &::before {
+                    background-color: white;
                     top: -10px;
                     height: 5px;
                 }
                 
                 &::after {
+                    background-color: white;
                     bottom: -10px;
                     height: 5px;
                 }
@@ -614,6 +663,10 @@ body {
             font-size: 1.2rem;
         }
     }
+
+    #github-link, #linkedin-link {
+        width: 2rem;
+    }
 }
 
 @media screen and (min-width: 1900px) {
@@ -629,15 +682,17 @@ body {
     .header {
         height: calc(#{$burger-dimensions} * 3.5);
 
-        .contact-links {
+        .banner {
             height: calc(#{$contactHeight} * 1.8);
 
-            span {
-                font-size: 2rem;
+            .contact-links {
+                #github-link, #linkedin-link {
+                    width: 3rem;
+                }
             }
-            
-            #github-link, #linkedin-link {
-                width: 2.75rem;
+
+            .contact-links span {
+                font-size: 2rem;
             }
         }
     }
@@ -706,13 +761,18 @@ body {
     }
 
     .header {
-        .contact-links {
+        .banner {
             height: calc(#{$contactHeight} * 2);
-            font-size: 2.5rem;
-            
-            #github-link, #linkedin-link {
-                width: 3.75rem;
+            .contact-links span {
+                font-size: 2.5rem;
             }
+
+            .contact-links {
+                #github-link, #linkedin-link {
+                    width: 3.75rem;
+                }
+            }
+            
         }
     }
 

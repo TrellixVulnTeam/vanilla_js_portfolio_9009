@@ -76,9 +76,11 @@ imageContainer.forEach((el, i) => {
     el.addEventListener('mouseenter', () => {
         image.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
         fullScreen.style.display = 'flex'
+        // fullScreen.requestFullscreen()
     })
     image.addEventListener('mouseleave', () => {
         fullScreen.style.display = 'none'
+        // document.exitFullscreen()
     })
 })
 
@@ -86,6 +88,7 @@ const closeFullScreen = document.querySelector('.close-fullscreen')
 
 const closeScreen = () => {
     fullScreen.style.display = 'none'
+    // document.exitFullscreen()
 }
 
 document.addEventListener('keyup', (e) => {
