@@ -9,10 +9,10 @@
     <link rel="stylesheet" type="text/css" href="./index.css"/>
     <script src='load.js' defer></script>
 </head>
-<body id='body'>
+<body id='body' onLoad="setLogo()">
     <div class='header'>
         <div class='menu-container'>
-            <input class='toggler' type='checkbox'/>
+            <input class='menu-toggler' type='checkbox'/>
             <div class='burger-menu'><div></div></div>
             <div class='menu'>
                 <div id='darkmode-toggler' onClick="toggleDarkMode()"></div>
@@ -25,7 +25,7 @@
         </div>
         <div class='banner'>
             <div class='logo' onClick="navigateHome()">
-                <img src='./assets/images/FINAL_LogoTransparent_NoDropShadow.png' alt='logo' height='110%'/>
+                <img id='logo' src='./assets/images/FINAL_LogoTransparent_NoDropShadowDark.png' alt='logo' height='110%'/>
             </div>
             <div class='contact-links'>
                 <span id='email-address'><a href='mailto:mpnix@protonmail.com'>mpnix@protonmail.com</a></span>
@@ -131,6 +131,9 @@
                 <h1>Contact</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
             </div>
+            <svg height="100%" width="100%">
+                <text x="50%" y="50%" fill="red" text-anchor="middle">Web Dev</text>
+            </svg>
         </div>
     </div>
 </body>

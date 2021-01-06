@@ -6,6 +6,8 @@ const linkProjects = document.getElementById('link-projects')
 const linkContact = document.getElementById('link-contact')
 const faders = document.querySelectorAll('.fader')
 const container = document.querySelectorAll('.container')
+const menu = document.querySelector('.menu-toggler')
+let darkMode = false
 
 const navigateHome = () => {
     home.style.display = 'flex'
@@ -18,7 +20,7 @@ const navigateHome = () => {
     linkProjects.classList.remove('active-link')
     linkContact.classList.remove('active-link')
 
-    document.getElementsByClassName('toggler')[0].checked = false
+    menu.checked = false
 }
 
 const navigateProjects = () => {
@@ -40,7 +42,7 @@ const navigateProjects = () => {
     linkProjects.classList.add('active-link')
     linkContact.classList.remove('active-link')
 
-    document.getElementsByClassName('toggler')[0].checked = false
+    menu.checked = false
 }
 
 const navigateContact = () => {
@@ -54,7 +56,7 @@ const navigateContact = () => {
     linkProjects.classList.remove('active-link')
     linkContact.classList.add('active-link')
 
-    document.getElementsByClassName('toggler')[0].checked = false
+    menu.checked = false
 }
 
 const options = {
@@ -109,12 +111,31 @@ const scrollToTop = () => {
 }
 
 const toggleDarkMode = () => {
+    const logo = document.getElementById('logo')
+
+    if (document.body.clientWidth <= 750) {
+        const source = darkMode
+        ? './assets/images/FINAL_LogoTransparent_NoDropShadowDark.png'
+        : './assets/images/FINAL_LogoTransparent_NoDropShadowLight.png'
+        logo.src = source
+    } else {
+        logo.src = './assets/images/FINAL_LogoTransparent_NoDropShadowLight.png'
+    }
+
+    document.getElementById('darkmode-toggler').style.background = darkMode 
+    ? 'grey' : 'rgba(200,170,0,0.89)'
+    
     document.getElementById('body').classList.toggle('dark-mode')
+    menu.checked = false
+
+    darkMode = !darkMode
 }
 
-const closeDescription = () => {
-    const desc = document.querySelectorAll('.description')[0]
-    desc.style.whiteSpace = 'no-wrap'
-    desc.style.overflow = 'hidden'
-    desc.style.height = '30px'
+const setLogo = () => {
+    const docWidth = document.body.clientWidth
+    const logo = document.getElementById('logo')
+
+    logo.src = docWidth > 750 
+    ? './assets/images/FINAL_LogoTransparent_NoDropShadowLight.png'
+    : './assets/images/FINAL_LogoTransparent_NoDropShadowDark.png'
 }
