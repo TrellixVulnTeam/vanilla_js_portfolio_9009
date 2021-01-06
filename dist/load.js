@@ -5,11 +5,14 @@ const linkHome = document.getElementById('link-home')
 const linkProjects = document.getElementById('link-projects')
 const linkContact = document.getElementById('link-contact')
 const faders = document.querySelectorAll('.fader')
+const container = document.querySelectorAll('.container')
 
 const navigateHome = () => {
     home.style.display = 'flex'
     projects.style.display = 'none'
     contact.style.display = 'none'
+
+    container[0].scrollTop = 0;
 
     linkHome.classList.add('active-link')
     linkProjects.classList.remove('active-link')
@@ -22,6 +25,8 @@ const navigateProjects = () => {
     home.style.display = 'none'
     projects.style.display = 'flex'
     contact.style.display = 'none'
+
+    container[1].scrollTop = 0;
 
     faders.forEach(fader => {
         fader.classList.remove('appear')
@@ -42,6 +47,8 @@ const navigateContact = () => {
     home.style.display = 'none'
     projects.style.display = 'none'
     contact.style.display = 'flex'
+
+    container[2].scrollTop = 0;
 
     linkHome.classList.remove('active-link')
     linkProjects.classList.remove('active-link')
@@ -96,3 +103,18 @@ document.addEventListener('keyup', (e) => {
         fullScreen.style.display = 'none'
     }
 })
+
+const scrollToTop = () => {
+    container[1].scrollTop = 0
+}
+
+const toggleDarkMode = () => {
+    document.getElementById('body').classList.toggle('dark-mode')
+}
+
+const closeDescription = () => {
+    const desc = document.querySelectorAll('.description')[0]
+    desc.style.whiteSpace = 'no-wrap'
+    desc.style.overflow = 'hidden'
+    desc.style.height = '30px'
+}

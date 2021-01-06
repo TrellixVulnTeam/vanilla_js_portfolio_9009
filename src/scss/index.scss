@@ -25,7 +25,6 @@ body {
 
     h1 {
         width: 100%;
-        font-size: 2.5rem;
         color: $highlightFont;
         margin-bottom: 2rem;
     }
@@ -56,11 +55,13 @@ body {
         align-items: center;
         top: 1rem;
         right: 0;
-        height: $contactHeight;
+        min-height: $contactHeight;
+        height: 2.5vw;
+        max-height: calc(#{$contactHeight} * 1.5);
         padding: 0;
         color: white;
         background: $header-bg-color;
-        clip-path: polygon(1% 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0.75% 0, 100% 0, 100% 100%, 0 100%);
         
         .logo {
             position: relative;
@@ -85,6 +86,16 @@ body {
             display: flex;
             align-items: center;
             height: 100%;
+            padding: 0.75rem;
+
+            a #test {
+                width: 20px;
+                height: 20px;
+                background-image: url('./assets/github-logo.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
 
             span {
                 cursor: pointer;
@@ -92,11 +103,11 @@ body {
                 font-size: 1rem;
 
                 &:first-child {
-                    margin-left: 20px;
+                    margin-left: 0.5rem;
                 }
 
                 &:last-child {
-                    margin-right: 20px;
+                    margin-right: 0.5rem;
                 }
             }
 
@@ -139,14 +150,26 @@ body {
         min-height: 100vh;
         opacity: 1;
         left: 0;
-        width: calc(#{$menu-width} * 0.8);
+        min-width: $menu-width;
+        max-width: 500px;
+        width: 15vw;
         transition: right 400ms ease-out, opacity 0.5s ease;
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
-        background: rgba(0,0,0,0.85);
+        background: rgba(0,0,0,0.97);
         clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
         z-index: 1;
+
+        #darkmode-toggler {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+        }
 
         ul {
             margin-top: 20vh;
@@ -189,8 +212,9 @@ body {
 
             .active-link {
                 color: $highlightFont;
+                text-shadow: 0 0 4px $highlightFont;
                 &:hover {
-                    text-shadow: none;
+                    text-shadow: 0 0 4px $highlightFont;
                     // text-decoration: none;
                     &::before {
                         display: none;
@@ -272,8 +296,11 @@ body {
 .main {
     position: relative;
     height: 100vh;
-    width: calc(100vw - #{$menu-width} * 0.8);
-    margin-left: calc(#{$menu-width} * 0.8);
+    // width: calc(100vw - #{$menu-width} * 0.8);
+    // margin-left: calc(#{$menu-width} * 0.8);
+    width: calc(100vw - ((#{$menu-width} + 15vw) / 2));
+    // margin-left: $menu-width;
+    margin-left: calc((#{$menu-width} + 15vw) / 2);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -286,9 +313,10 @@ body {
         top: 0;
         left: 0;
         width: 90%;
-        height: calc(#{$contactHeight} * 2.75);
+        height: calc(#{$contactHeight} * 3);
         z-index: 1;
         background: linear-gradient(to bottom, white 60%, rgba(0,0,0,0) 100%);
+        // background: red;
     }
 }
 
@@ -296,10 +324,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: $contactHeight 0;
-    height: calc(100% - 5rem);
+    height: 100%;
+    height: calc(100vh - (#{$contactHeight} * 1.8));
     width: 100%;
-    margin-top: 5rem;
+    margin-top: calc(#{$contactHeight} * 1.8);
+    padding-top: calc(#{$contactHeight} * 1.2);
     overflow-x: hidden;
     gap: 4rem;
 }
@@ -310,7 +339,7 @@ body {
     align-items: center;
 
     & > div {
-        width: 50%;
+        width: 75%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -322,7 +351,9 @@ body {
         ul {
             margin: 0;
         }
-
+        &:last-child {
+            padding-bottom: 3rem;
+        }
     }
 
 }
@@ -349,7 +380,6 @@ body {
     opacity: 0;
     color: black;
     background-color: rgba($highlightFont, 0.15);
-    // border: 1px solid black;
     clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
     transform: translateX(25vw);
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
@@ -366,6 +396,18 @@ body {
         & > div {
             margin-top: 0.25rem;
             margin-bottom: 0.5rem;
+        }
+
+
+        .close-description {
+            position: absolute;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: -5px;
+            right: 10px;
+            color: black;
+            cursor: pointer;
         }
 
         &:hover {
@@ -407,7 +449,6 @@ body {
         position: relative;
         background: white;
         margin: 1rem auto 1.5rem;
-        width: 90%;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         z-index: 0;
 
@@ -449,14 +490,14 @@ body {
         width: 90%;
 
         a {
-            max-width: 35%;
-            height: 2rem;
+            max-width: 45%;
+            max-height: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             background: rgba(0,0,0,0.05);
             border: 1px solid black;
-            padding: 1.5rem 2rem;
+            padding: 1rem;
             color: black;
             text-align: center;
             text-decoration: none;
@@ -503,10 +544,10 @@ body {
     }
 
     .close-fullscreen {
+        position: absolute;
         display: none;
         justify-content: center;
         align-items: center;
-        position: absolute;
         top: 2vh;
         right: 2vh;
         width: 60px;
@@ -534,9 +575,15 @@ body {
         }
     }
 
+    .project-description:hover {
+        .close-description {
+            display: flex;
+        }
+    }
+
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 350px) {
     .logo {
         width: 0;
     }
@@ -544,18 +591,26 @@ body {
 
 @media screen and (max-width: 750px) {
 
+    body {
+        font-size: 0.8rem;
+    }
+
     .header {
         height: calc(#{$burger-dimensions} * 2);
+        height: 0;
 
         .banner {
+            // position: fixed;
             top: 0;
             height: calc(#{$contactHeight} * 1.5);
-            width: 100vw;
+            // width: 100vw;
             clip-path: none;
             justify-content: flex-end;
+            background: none;
 
             .logo {
                 height: 55%;
+                right: 1rem;
                 &::before {
                     display: none;
                 }
@@ -589,20 +644,37 @@ body {
         .container {
             margin: 0 auto;
             height: 100%;
-            padding: 4rem 0;
+            gap: 2rem;
+            padding-top: calc(#{$contactHeight} * 1.5 + 1rem);
         }
 
         .fader {
-            width: 90vw;
+            width: 95%;
+            max-width: 550px;
+            clip-path: none;
+            padding: 0.75rem;
 
             .image-container {
+                margin: 0.5rem auto;
                 &::before, &::after {
                     display: none;
                 }
+            }
 
-                img {
-                    height: 100%;
+            .project-description:hover {
+                margin: 0;
+                padding-top: 0;
+                width: 100%;
+                height: 100%;
+
+                & > div {
+                    margin: 0.5rem;
                 }
+            }
+
+            .project-links a {
+                font-size: 0.5rem;
+                padding: 0.25rem 1rem;
             }
         }
     }
@@ -617,6 +689,7 @@ body {
             top: -110vh;
             left: 0;
             width: 100vw;
+            max-width: 100vw;
             height: 100vh;
             clip-path: none;
             display: flex;
@@ -645,16 +718,16 @@ body {
 
             div {
                 height: 5px;
-                background-color: white;
+                // background-color: white;
                 
                 &::before {
-                    background-color: white;
+                    // background-color: white;
                     top: -10px;
                     height: 5px;
                 }
                 
                 &::after {
-                    background-color: white;
+                    // background-color: white;
                     bottom: -10px;
                     height: 5px;
                 }
@@ -670,10 +743,13 @@ body {
 @media screen and (min-width: 900px) {
     .fader {
         width: 60%;
+        .image-container {
+            margin: 1rem 1rem 1.5rem;
+        }
     }
 
     .menu-container .menu {
-        width: calc(#{$menu-width} * 0.9);
+        // width: calc(#{$menu-width} * 0.9);
 
         ul {
             font-size: 1.2rem;
@@ -688,52 +764,40 @@ body {
 @media screen and (min-width: 1900px) {
 
     body {
-        font-size: 2rem;
-
-        h1 {
-            font-size: 4rem;
-        }
+        font-size: 1.2rem;
     }
 
     .header {
         height: calc(#{$burger-dimensions} * 3.5);
 
         .banner {
-            height: calc(#{$contactHeight} * 1.8);
-
-            .contact-links {
-                #github-link, #linkedin-link {
-                    width: 3rem;
-                }
-            }
-
             .contact-links span {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }
 
+    .container {
+        padding-top: calc(#{$contactHeight} * 5);
+        padding-top: 5vw;
+    }
+
     .menu-container .menu {
-        width: calc(#{$menu-width} * 1.3);
+        // width: calc(#{$menu-width} * 1.3);
 
         ul {
             font-size: 1.8rem;
         }
     }
 
-    .main {
-        margin-left: calc(#{$menu-width} * 1.2);
-        width: calc(100vw - (#{$menu-width} * 1.2));
-
-        &::before {
-            height: calc(#{$contactHeight} * 4);
-        }
-    }
+    // .main {
+    //     margin-left: calc(#{$menu-width} * 1.2);
+    //     width: calc(100vw - (#{$menu-width} * 1.2));
+    // }
 
     .projects-container {
 
         .fader {
-            width: 75%;
             margin-top: 4rem;
             padding: 2.5rem;
 
@@ -751,12 +815,6 @@ body {
                     transform: rotate(1deg);
                 }
             }
-
-            .project-links {
-                a {
-                    padding: 2.5rem 2rem;
-                }
-            }
         }
 
     }
@@ -765,43 +823,64 @@ body {
 @media screen and (min-width: 3000px) {
 
     body {
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
 
     .menu-container .menu {
-        width: calc(#{$menu-width} * 2);
+        // width: calc(#{$menu-width} * 2);
 
         ul {
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
     }
 
     .header {
         .banner {
-            height: calc(#{$contactHeight} * 2);
+            max-height: calc(#{$contactHeight} * 2.5);
+            padding: 0.5rem;
             .contact-links span {
                 font-size: 2.5rem;
             }
-
-            .contact-links {
-                #github-link, #linkedin-link {
-                    width: 3.75rem;
-                }
-            }
-            
         }
     }
 
     .main {
-        margin-left: calc(#{$menu-width} * 1.6);
-        width: calc(100vw - (#{$menu-width} * 1.6));
-        &::before {
-            height: calc(#{$contactHeight} * 6.5);
-        }
+        // margin-left: calc(#{$menu-width} * 1.6);
+        // width: calc(100vw - (#{$menu-width} * 1.6));
 
         .fader {
             padding: 3rem 4rem;
             margin-top: 10rem;
+        }
+    }
+}
+
+.dark-mode {
+    background: $darkmode-bg-color;
+    color: white;
+    .menu-container .burger-menu > div,
+    .menu-container .burger-menu > div::before,
+    .menu-container .burger-menu > div::after {
+        background: white;
+    }
+
+    .banner {
+        background: rgba($header-bg-color, 0.6);
+        background: none;
+    }
+
+    .main::before {
+        background: linear-gradient(to bottom, $darkmode-bg-color 60%, rgba(0,0,0,0) 100%);
+    }
+    .fader {
+        background: none;
+        border: 1px solid rgba($highlightFont, 0.35);
+        border-radius: 6px;
+        color: white;
+
+        .project-links a {
+            border: 1px solid white;
+            color: white;
         }
     }
 }
