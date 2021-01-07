@@ -112,21 +112,26 @@ const scrollToTop = () => {
 
 const toggleDarkMode = () => {
     const logo = document.getElementById('logo')
+    const toggler = document.getElementById('darkmode-toggler')
 
     if (document.body.clientWidth <= 750) {
         const source = darkMode
-        ? './assets/images/FINAL_LogoTransparent_NoDropShadowDark.png'
-        : './assets/images/FINAL_LogoTransparent_NoDropShadowLight.png'
+        ? './assets/images/LogoDark1000px.png'
+        : './assets/images/LogoLight1000px.png'
         logo.src = source
     } else {
-        logo.src = './assets/images/FINAL_LogoTransparent_NoDropShadowLight.png'
+        logo.src = './assets/images/LogoLight1000px.png'
     }
 
-    document.getElementById('darkmode-toggler').style.background = darkMode 
-    ? 'grey' : 'rgba(200,170,0,0.89)'
-    
+    toggler.style.justifyContent = toggler.style.justifyContent === 'flex-end' 
+    ? 'flex-start' : 'flex-end'
+    // ? 'rgb(72, 72, 72)' : 'rgba(200,170,0,0.89)'
+
     document.getElementById('body').classList.toggle('dark-mode')
-    menu.checked = false
+
+    setTimeout(() => {
+        menu.checked = false
+    }, 400)
 
     darkMode = !darkMode
 }
@@ -136,6 +141,6 @@ const setLogo = () => {
     const logo = document.getElementById('logo')
 
     logo.src = docWidth > 750 
-    ? './assets/images/FINAL_LogoTransparent_NoDropShadowLight.png'
-    : './assets/images/FINAL_LogoTransparent_NoDropShadowDark.png'
+    ? './assets/images/LogoLight1000px.png'
+    : './assets/images/LogoDark1000px.png'
 }

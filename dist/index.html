@@ -15,7 +15,13 @@
             <input class='menu-toggler' type='checkbox'/>
             <div class='burger-menu'><div></div></div>
             <div class='menu'>
-                <div id='darkmode-toggler' onClick="toggleDarkMode()"></div>
+                <div id='darkmode-container'>
+                    <span>Light</span>
+                    <div id='darkmode-toggler' onClick="toggleDarkMode()">
+                        <div></div>
+                    </div>
+                    <span>Dark</span>
+                </div>
                 <ul>
                     <li class='link active-link' id='link-home' onClick="navigateHome()">ABOUT</li>
                     <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
@@ -121,7 +127,7 @@
                 </div>
             </div>
 
-            <button onClick="scrollToTop()">TOP</button>
+            <button onClick="scrollToTop()"><img src="http://www.clker.com/cliparts/z/z/h/C/V/5/up-white-arrow-hi.png" alt="Scroll To Top" width="30px"></button>
         </div>
 
 <!-- Contact page -->

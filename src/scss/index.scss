@@ -161,24 +161,47 @@ body {
         clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
         z-index: 1;
 
-        #darkmode-toggler {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: grey;
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     right: 43px;
+        //     width: 2px;
+        //     height: 100%;
+        //     background: white;
+        //     transform: rotate(2.5deg);
+        // }
 
-            &::before {
-                position: absolute;
-                content: "Toggle dark mode";
-                font-size: 0.8em;
-                color: white;
-                top: 23%;
-                width: 11rem;
-                height: 90%;
-                left: -120px;
+        #darkmode-container {
+            position: absolute;
+            top: 20px;
+            right: 1rem;
+            width: 80%;
+            height: 30px;
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+
+            span {
+                margin: 0 10px;
+            }
+
+            #darkmode-toggler {
+                width: 30px;
+                height: 20px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border: 1px solid white;
+                border-radius: 10px;
+                cursor: pointer;
+                    
+                div {
+                    width: 14px;
+                    height: 14px;
+                    margin: 0 2px;
+                    border-radius: 7px;
+                    background: rgb(230,230,230);
+                }
             }
         }
 
@@ -394,9 +417,8 @@ body {
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
     .project-description {
-        max-width: 90%;
+        max-width: 100%;
         align-self: flex-start;
-        margin-left: 5%;
         position: relative;
         background-color: rgba(255,255,255,0);
         outline: 10px solid rgba(255,255,255,0);
@@ -422,9 +444,10 @@ body {
         &:hover {
             position: absolute;
             text-align: center;
-            padding-top: 10%;
-            width: 80%;
+            padding-top: 1rem;
+            width: 85%;
             height: 73%;
+            margin: 2%;
             background-color: rgba($highlightFont, 0.05);
             outline: 10px solid rgba($highlightFont, 0.05);
             z-index: 50;
@@ -433,13 +456,18 @@ body {
 
             & + .image-container {
                 margin-top: 3.65rem;
-                opacity: 0.05;
+                opacity: 0.01;
+            }
+
+            h3 {
+                font-size: 2rem;
             }
 
             .description {
                 text-align: center;
                 font-size: 1.2em;
                 margin-top: 2rem;
+                padding: 0 15%;
                 white-space: normal;
                 max-height: 70%;
                 overflow-y: auto;
