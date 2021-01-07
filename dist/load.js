@@ -125,7 +125,6 @@ const toggleDarkMode = () => {
 
     toggler.style.justifyContent = toggler.style.justifyContent === 'flex-end' 
     ? 'flex-start' : 'flex-end'
-    // ? 'rgb(72, 72, 72)' : 'rgba(200,170,0,0.89)'
 
     document.getElementById('body').classList.toggle('dark-mode')
 
