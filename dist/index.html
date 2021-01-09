@@ -15,16 +15,16 @@
             <input class='menu-toggler' type='checkbox'/>
             <div class='burger-menu'><div></div></div>
             <div class='menu'>
-                <div id='darkmode-container'>
+                <div id='darkmode-container' class='no-select'>
                     <img src='./assets/graphics/light-mode-icon.png' width='30px'>
-                    <div id='darkmode-toggler' onClick="toggleDarkMode()">
+                    <div id='darkmode-toggler' class='no-select' onClick="toggleDarkMode()">
                         <div id='tog'></div>
                     </div>
                     <img src='./assets/graphics/dark-mode-icon.png' width='30px'>
                 </div>
                 <ul>
                     <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
-                    <li class='link active-link' id='link-home' onClick="navigateHome()">ABOUT ME</li>
+                    <li class='link active-link' id='link-home' onClick="navigateHome()">ABOUT</li>
                     <li class='link' id='link-contact' onClick="navigateContact()">CONTACT</li>
                 </ul>
             </div>
@@ -83,6 +83,7 @@
             <div class='text-content'>
                 <h1>Hello!</h1>
                 <p>I'm Michael, a web developer from Manchester in the UK.</p>
+                <p>Take a look at some of my work below...</p>
             </div>
             <div class='fader'>
                 <div class='project-description'>
@@ -127,7 +128,11 @@
                 </div>
             </div>
 
-            <div class='scrollToTop' onClick="scrollToTop()"><img src="./assets/graphics/scroll-to-top.png" alt="Scroll To Top" width="30px">Back to top</div>
+            <div class='scrollToTop' onClick="scrollToTop()">
+                <!-- <span><strong>^</strong></span><br> -->
+                <img src="./assets/graphics/scroll-to-top.png" alt="Scroll To Top" width="30px">
+            <span>Back to top</span>
+            </div>
             <div class='footer'>
                 <div>&copy;&nbsp;<span id='current-year'></span>&nbsp;Michael Nix</div>
                 <div></div>
