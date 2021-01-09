@@ -520,6 +520,10 @@ body {
                 overflow-y: auto;
                 transition: margin-top 600ms ease-in-out;
 
+                &::after {
+                    display: none;
+                }
+
                 p {
                     margin-top: 0.5rem;
                 }
