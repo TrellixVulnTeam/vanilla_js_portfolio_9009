@@ -85,7 +85,6 @@ imageContainer.forEach((el, i) => {
     el.addEventListener('mouseenter', () => {
         image.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
         fullScreen.style.display = 'flex'
-        // fullScreen.requestFullscreen()
     })
     image.addEventListener('mouseleave', () => {
         fullScreen.style.display = 'none'
@@ -112,7 +111,8 @@ const scrollToTop = () => {
 
 const toggleDarkMode = () => {
     const logo = document.getElementById('logo')
-    const toggler = document.getElementById('darkmode-toggler')
+    // const toggler = document.getElementById('darkmode-toggler')
+    const tog = document.getElementById('tog')
 
     if (document.body.clientWidth <= 750) {
         const source = darkMode
@@ -123,8 +123,11 @@ const toggleDarkMode = () => {
         logo.src = './assets/images/LogoLight1000px.png'
     }
 
-    toggler.style.justifyContent = toggler.style.justifyContent === 'flex-end' 
-    ? 'flex-start' : 'flex-end'
+    // toggler.style.justifyContent = toggler.style.justifyContent === 'flex-end' 
+    // ? 'flex-start' : 'flex-end'
+
+    tog.style.marginLeft = tog.style.marginLeft !== 'calc(100% - 16px)' 
+    ? 'calc(100% - 16px)' : '2px'
 
     document.getElementById('body').classList.toggle('dark-mode')
 
@@ -142,4 +145,8 @@ const setLogo = () => {
     logo.src = docWidth > 750 
     ? './assets/images/LogoLight1000px.png'
     : './assets/images/LogoDark1000px.png'
+
+    navigateProjects()
+
+    document.getElementById('current-year').innerHTML = new Date().getFullYear()
 }
