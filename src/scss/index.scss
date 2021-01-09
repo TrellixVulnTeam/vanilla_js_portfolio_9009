@@ -783,6 +783,10 @@ body {
             }
 
             .project-description {
+
+                .description::after {
+                    content: 'More...';
+                }
             
                 &:hover {
                     margin: 0;
@@ -1037,6 +1041,11 @@ body {
         background: none;
         box-shadow: 0 0 4px 0 rgba($highlightFont, 0.7);
         color: white;
+
+
+        .description::after {
+            background: $darkmode-bg-color;
+        }
 
         .project-description p:first-child::after {
             background: $darkmode-bg-color;
