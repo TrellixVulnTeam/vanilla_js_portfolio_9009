@@ -16,11 +16,11 @@
             <div class='burger-menu'><div></div></div>
             <div class='menu'>
                 <div id='darkmode-container'>
-                    <span>Light</span>
+                    <img src='./assets/graphics/light-mode-icon.png' width='30px'>
                     <div id='darkmode-toggler' onClick="toggleDarkMode()">
                         <div id='tog'></div>
                     </div>
-                    <span>Dark</span>
+                    <img src='./assets/graphics/dark-mode-icon.png' width='30px'>
                 </div>
                 <ul>
                     <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
@@ -30,13 +30,13 @@
             </div>
         </div>
         <div class='banner'>
-            <div class='logo' onClick="navigateHome()">
+            <div class='logo' onClick="navigateProjects()">
                 <img id='logo' src='./assets/images/LogoLight1000px.png' alt='logo' height='110%'/>
             </div>
             <div class='contact-links'>
-                <a target='_blank' href='mailto:mpnix@protonmail.com' id='email-link'></a>
-                <a target='_blank' href='https://github.com/c0llid3r' id='github-link'></a>
-                <a target='_blank' href='https://www.linkedin.com/in/michael-nix-a0b88b200/' id='linkedin-link'></a>
+                <a target='_blank' href='mailto:mpnix@protonmail.com' class='header-link' id='email-link'></a>
+                <a target='_blank' href='https://github.com/c0llid3r' class='header-link' id='github-link'></a>
+                <a target='_blank' href='https://www.linkedin.com/in/michael-nix-a0b88b200/' class='header-link' id='linkedin-link'></a>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
             <div class="close-fullscreen" onClick="closeScreen()"><strong>X</strong></div>
         </div>
         <div id='projects' class='container projects-container'>
-            <div>
+            <div class='text-content'>
                 <h1>Hello!</h1>
                 <p>I'm Michael, a web developer from Manchester in the UK.</p>
             </div>

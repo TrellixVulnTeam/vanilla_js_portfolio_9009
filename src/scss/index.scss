@@ -26,7 +26,6 @@ body {
     h1 {
         width: 100%;
         color: $highlightFont;
-        margin-bottom: 2rem;
     }
 
     a {
@@ -76,7 +75,7 @@ body {
                 position: absolute;
                 top: -20%;
                 right: -5%;
-                width: 1px;
+                width: 2px;
                 height: 140%;
                 transform: rotate(3deg);
             }
@@ -87,15 +86,6 @@ body {
             align-items: center;
             height: 100%;
             padding: 0.75rem;
-
-            a #test {
-                width: 20px;
-                height: 20px;
-                background-image: url('./assets/github-logo.png');
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
 
             a {
                 cursor: pointer;
@@ -111,7 +101,7 @@ body {
                 }
             }
 
-            #email-link, #github-link, #linkedin-link {
+            .header-link {
                 height: 100%;
                 width: 1.75rem;
                 background-image: url('./assets/github-logo.png');
@@ -164,29 +154,24 @@ body {
         justify-content: flex-end;
         align-items: flex-start;
         background-color: $darkmode-bg-color;
-        // background: rgba(0,0,0,0.97);
         clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
         z-index: 1;
 
         #darkmode-container {
             position: absolute;
             top: 20px;
-            right: 1rem;
-            width: 80%;
+            width: 100%;
+            padding: 0 25%;
             height: 30px;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             color: white;
-
-            span {
-                margin: 0 10px;
-            }
 
             #darkmode-toggler {
                 width: 30px;
                 height: 20px;
                 display: flex;
-                // justify-content: flex-start;
                 align-items: center;
                 border: 1px solid white;
                 border-radius: 10px;
@@ -343,7 +328,7 @@ body {
         width: 90%;
         height: calc(#{$contactHeight} * 3);
         z-index: 1;
-        background: linear-gradient(to bottom, white 60%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, white 45%, rgba(0,0,0,0) 80%);
     }
 
     .scrollToTop {
@@ -359,12 +344,31 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    height: calc(100vh - (#{$contactHeight} * 1.8));
+    height: calc(100vh - (#{$contactHeight} * 1.4));
     width: 100%;
-    margin-top: calc(#{$contactHeight} * 1.8);
+    margin-top: calc(#{$contactHeight} * 1.4);
     padding-top: calc(#{$contactHeight} * 1.2);
     overflow-x: hidden;
-    gap: 4rem;
+    // gap: 4rem;
+
+    & > .text-content {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+
+        ul {
+            margin: 0;
+        }
+        &:last-child {
+            padding-bottom: 3rem;
+        }
+    }
 }
 
 .home-container, .contact-container {
@@ -411,6 +415,7 @@ body {
     align-items: center;
     width: 70%;
     max-width: 1300px;
+    margin: 2rem 0;
     opacity: 0;
     color: black;
     // background-color: rgba($highlightFont, 0.45);
@@ -424,7 +429,7 @@ body {
         align-self: center;
         position: relative;
         width: calc(100% - 5rem);
-        margin: 1.5rem 2.5rem 0;
+        margin: 1rem 2.5rem 0;
         background-color: rgba(255,255,255,0);
         outline: 10px solid rgba(255,255,255,0);
         transition: background-color 600ms ease, outline 500ms ease;
@@ -683,10 +688,8 @@ body {
         height: 0;
 
         .banner {
-            // position: fixed;
             top: 0;
             height: calc(#{$contactHeight} * 1.5);
-            // width: 100vw;
             clip-path: none;
             justify-content: flex-end;
             background: none;
@@ -716,7 +719,7 @@ body {
     }
 
     .main {
-        width: 100vw;
+        width: 95vw;
         margin: 0 auto;
 
         &::before {
@@ -729,13 +732,17 @@ body {
             height: 100%;
             gap: 2rem;
             padding-top: calc(#{$contactHeight} * 1.5 + 1rem);
+
+            & > .text-content {
+                width: 90%;
+            }
         }
 
         .fader {
             width: 95%;
             max-width: 550px;
             clip-path: none;
-            padding: 0.75rem;
+            padding: 0 0.75rem;
 
             .image-container {
                 margin: 0.5rem auto;
@@ -782,6 +789,11 @@ body {
             align-items: center;
             background: rgba(0,0,0,0.97);
             transition: top 400ms ease 400ms, opacity 400ms ease;
+
+            #darkmode-container {
+                right: 10px;
+                padding: 0;
+            }
 
             ul {
                 margin: 0;
@@ -854,6 +866,10 @@ body {
 
     body {
         font-size: 1.2rem;
+    }
+
+    .main::before {
+        background: linear-gradient(to bottom, white 55%, rgba(0,0,0,0) 100%);
     }
 
     .header {
@@ -931,6 +947,14 @@ body {
     }
 
     .main {
+        &::before {
+            background: none;
+        }
+
+        .container {
+            height: 100%;
+            margin-top: 0;
+        }
 
         .fader {
             padding: 3rem 4rem;
