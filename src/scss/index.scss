@@ -23,8 +23,16 @@ html, body {
 body {
     font-family: 'Montserrat', sans-serif;
 
-    h1 {
+    h1, h2 {
         width: 100%;
+        // margin: 1em 0;
+    }
+
+    div h3, div h2 {
+        margin-top: 1em;
+    }
+    
+    h1 {
         color: $highlightFont;
     }
 
@@ -355,7 +363,6 @@ body {
         width: 70%;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         p {
             align-self: flex-start;
@@ -430,6 +437,8 @@ body {
         position: relative;
         width: calc(100% - 5rem);
         margin: 1rem 2.5rem 0;
+        height: 4rem;
+        overflow: hidden;
         background-color: rgba(255,255,255,0);
         outline: 10px solid rgba(255,255,255,0);
         transition: background-color 600ms ease, outline 500ms ease;
@@ -439,6 +448,29 @@ body {
             margin-bottom: 0.5rem;
         }
 
+        .description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-bottom: 1rem;
+            position: relative;
+
+            & ~ div {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            p:first-child::after {
+                position: absolute;
+                content: '[Read more...]';
+                // font-size: 0.8em;
+                top: 0;
+                right: 0;
+                padding-left: 10px;
+                // height: 0.8em;
+                background: white;
+            }
+        }
 
         .close-description {
             position: absolute;
@@ -482,13 +514,11 @@ body {
                 max-height: 70%;
                 overflow-y: auto;
                 transition: margin-top 600ms ease-in-out;
-            }
-        }
 
-        .description {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+                p:first-child::after {
+                    display: none;
+                }
+            }
         }
     }
 
@@ -852,15 +882,12 @@ body {
 
 @media screen and (min-width: 900px) {
     .fader {
-        // width: 60%;
         .image-container {
             margin: 1rem 1rem 1.5rem;
         }
     }
 
     .menu-container .menu {
-        // width: calc(#{$menu-width} * 0.9);
-
         ul {
             font-size: 1.2rem;
         }
