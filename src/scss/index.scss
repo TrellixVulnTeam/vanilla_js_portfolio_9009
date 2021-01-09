@@ -25,15 +25,20 @@ body {
 
     h1, h2 {
         width: 100%;
-        // margin: 1em 0;
     }
 
     div h2 {
         margin-top: 3rem;
     }
+
+    .section-title {
+        padding-bottom: 5px;
+        border-bottom: 1px solid black;
+    }
     
     h1 {
         color: $highlightFont;
+        margin-bottom: 1em;
     }
 
     a {
@@ -455,20 +460,20 @@ body {
             padding-bottom: 1rem;
             position: relative;
 
+            &::after {
+                position: absolute;
+                content: '[Read more...]';
+                top: 0;
+                right: 0;
+                padding-top: 10px;
+                height: 100%;
+                padding-left: 10px;
+                background: white;
+            }
+
             & ~ div {
                 width: 80%;
                 margin: 0 auto;
-            }
-
-            p:first-child::after {
-                position: absolute;
-                content: '[Read more...]';
-                // font-size: 0.8em;
-                top: 0;
-                right: 0;
-                padding-left: 10px;
-                // height: 0.8em;
-                background: white;
             }
         }
 
@@ -514,6 +519,10 @@ body {
                 max-height: 70%;
                 overflow-y: auto;
                 transition: margin-top 600ms ease-in-out;
+
+                p {
+                    margin-top: 0.5rem;
+                }
 
                 p:first-child::after {
                     display: none;
@@ -636,43 +645,31 @@ body {
 }
 
 .footer {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 200px;
-    width: 100%;
-}
+    min-height: 100px;
+    margin-top: 4rem;
+    width: 80%;
+    border-top: 1px solid $darkmode-bg-color;
 
-.dark-mode {
-    background: $darkmode-bg-color;
-    color: white;
-    .menu-container .burger-menu > div,
-    .menu-container .burger-menu > div::before,
-    .menu-container .burger-menu > div::after {
-        background: white;
+    &::before, &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        width: 1px;
+        height: 1px;
+        border: 5px solid $darkmode-bg-color;
+        border-bottom: 5px solid white;
     }
 
-    .menu {
-        background-color: rgba($darkmode-menu-color, 0.98);
+    &::before {
+        left: 0;
     }
 
-    .banner {
-        background: rgba($header-bg-color, 0.6);
-        background: none;
-    }
-
-    .main::before {
-        background: linear-gradient(to bottom, $darkmode-bg-color 60%, rgba(0,0,0,0) 100%);
-    }
-    .fader {
-        background: none;
-        box-shadow: 0 0 4px 0 rgba($highlightFont, 0.7);
-        color: white;
-
-        .project-links a {
-            border: 1px solid white;
-            color: white;
-        }
+    &::after {
+        right: 0;
     }
 }
 
@@ -781,13 +778,21 @@ body {
                 }
             }
 
-            .project-description:hover {
-                margin: 0;
-                padding-top: 1rem;
-                width: 100%;
+            .project-description {
+                height: 4rem;
+            
+                &:hover {
+                    margin: 0;
+                    padding-top: 1rem;
+                    width: 100%;
 
-                & > div {
-                    margin: 0.5rem;
+                    h3 {
+                        font-size: 1.2rem;
+                    }
+
+                    & > div {
+                        margin: 0.5rem;
+                    }
                 }
             }
 
@@ -999,3 +1004,60 @@ body {
     }
 }
 
+.dark-mode {
+    background: $darkmode-bg-color;
+    color: white;
+    .menu-container .burger-menu > div,
+    .menu-container .burger-menu > div::before,
+    .menu-container .burger-menu > div::after {
+        background: white;
+    }
+
+    .menu {
+        background-color: rgba($darkmode-menu-color, 0.98);
+    }
+
+    .banner {
+        background: rgba($header-bg-color, 0.6);
+        background: none;
+    }
+
+    .main::before {
+        background: linear-gradient(to bottom, $darkmode-bg-color 60%, rgba(0,0,0,0) 100%);
+    }
+
+    .section-title {
+        border-bottom: 1px solid white;
+    }
+
+    .fader {
+        background: none;
+        box-shadow: 0 0 4px 0 rgba($highlightFont, 0.7);
+        color: white;
+
+        .project-description p:first-child::after {
+            background: $darkmode-bg-color;
+        }
+
+        .project-links a {
+            border: 1px solid white;
+            color: white;
+        }
+    }
+
+
+
+    .footer {
+        border-top: 1px solid white;
+    
+        &::before, &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            width: 1px;
+            height: 1px;
+            border: 5px solid white;
+            border-bottom: 5px solid $darkmode-bg-color;
+        }
+    }
+}
