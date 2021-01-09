@@ -28,8 +28,8 @@ body {
         // margin: 1em 0;
     }
 
-    div h3, div h2 {
-        margin-top: 1em;
+    div h2 {
+        margin-top: 3rem;
     }
     
     h1 {
@@ -431,10 +431,6 @@ body {
     // clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
     transform: translateX(25vw);
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
-
-    & :first-child {
-        margin-top: 0;
-    }
     
     .project-description {
         align-self: center;
