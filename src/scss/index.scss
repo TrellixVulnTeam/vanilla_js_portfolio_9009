@@ -11,6 +11,7 @@ html, body {
 }
 
 body {
+    min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
 
     h1 {
@@ -454,7 +455,7 @@ body {
             bottom: 0;
             padding-top: 0.2em;
             right: 0;
-            width: 16%;
+            width: 20%;
             height: 1.3rem;
             font-size: 0.8em;
             background: white;
@@ -1065,7 +1066,7 @@ body {
         color: white;
 
 
-        .description::after {
+        .project-description::after {
             background: $darkmode-bg-color;
         }
 
