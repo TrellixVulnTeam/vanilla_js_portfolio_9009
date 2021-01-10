@@ -808,17 +808,19 @@ body {
             }
 
             .project-description {
-                height: 4.8rem;
+                height: 4rem;
+                border-bottom: 0.5rem solid white;
 
                 &::after {
                     width: 25%;
-                    bottom: 0.2rem;
+                    bottom: -0.5rem;
                 }
 
                 &:hover {
-                    margin: 0;
+                    margin: 2rem 0 0;
                     padding-top: 1rem;
                     width: 100%;
+                    height: 85%;
 
 
                     & + .image-container {
