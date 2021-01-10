@@ -1,15 +1,5 @@
 @import 'variables.scss';
 
-/* Remove browser scrollbar */
-:root {
-  -ms-overflow-style: none; /*IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-  }
-}
-
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -52,7 +42,7 @@ body {
     }
 
     .section-title {
-        margin-top: 7rem;
+        margin-top: 4rem;
         margin-bottom: 2rem;
         padding-bottom: 5px;
         border-bottom: 1px solid black;
@@ -80,7 +70,18 @@ body {
     height: calc(#{$burger-dimensions} * 2.5);
     z-index: 10;
 
-    
+    //scroll fader using pseudo element
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: calc(#{$contactHeight} * 2.5);
+        z-index: 1;
+        background: linear-gradient(to bottom, white 20%, rgba(0,0,0,0) 80%);
+    }
+
     .banner {
         position: absolute;
         display: flex;
@@ -95,6 +96,7 @@ body {
         color: white;
         background: $darkmode-bg-color;
         clip-path: polygon(0.75% 0, 100% 0, 100% 100%, 0 100%);
+        z-index: 2;
         
         .logo {
             position: relative;
@@ -131,7 +133,7 @@ body {
                 }
 
                 &:last-child {
-                    margin-right: 0.5rem;
+                    margin-right: 1.5rem;
                 }
             }
 
@@ -344,7 +346,7 @@ body {
 
 .main {
     position: relative;
-    height: 100vh;
+    // height: 100vh;
     width: calc(100vw - ((#{$menu-width} + 15vw) / 2));
     margin-left: calc((#{$menu-width} + 15vw) / 2);
     overflow: hidden;
@@ -352,18 +354,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-//scroll fader using pseudo element
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 90%;
-        height: calc(#{$contactHeight} * 3);
-        z-index: 1;
-        background: linear-gradient(to bottom, white 45%, rgba(0,0,0,0) 80%);
-    }
 
     .scrollToTop {
         display: flex;
@@ -378,7 +368,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    height: calc(100vh - (#{$contactHeight} * 1.4));
+    // height: calc(100vh - (#{$contactHeight} * 1.4));
     width: 100%;
     margin-top: calc(#{$contactHeight} * 1.4);
     padding-top: calc(#{$contactHeight} * 1.2);
@@ -1065,8 +1055,8 @@ body {
         background: none;
     }
 
-    .main::before {
-        background: linear-gradient(to bottom, $darkmode-bg-color 60%, rgba(0,0,0,0) 100%);
+    .header::before {
+        background: linear-gradient(to bottom, $darkmode-bg-color 20%, rgba(0,0,0,0) 100%);
     }
 
     .section-title {
