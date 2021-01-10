@@ -60,7 +60,7 @@ const navigateContact = () => {
 }
 
 const options = {
-    threshold: 0.15
+    threshold: 0.1
 }
 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -106,7 +106,7 @@ document.addEventListener('keyup', (e) => {
 })
 
 const scrollToTop = () => {
-    container[1].scrollTop = 0
+    container[0].scrollTop = 0
 }
 
 const toggleDarkMode = () => {
