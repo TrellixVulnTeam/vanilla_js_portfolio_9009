@@ -525,7 +525,7 @@ body {
             margin: 1.5rem auto;
 
             & + .image-container {
-                margin-top: 5.5rem;
+                margin-top: 7.5rem;
                 opacity: 0.05;
                 transition: opacity 600ms ease-out;
             }
@@ -811,7 +811,7 @@ body {
             }
 
             .image-container {
-                margin: 0.5rem auto;
+                margin: 0 auto;
                 &::before, &::after {
                     display: none;
                 }
@@ -823,6 +823,11 @@ body {
                     margin: 0;
                     padding-top: 1rem;
                     width: 100%;
+
+
+                    & + .image-container {
+                        margin-top: 6.5rem;
+                    }
 
                     h3 {
                         font-size: 1.2rem;

@@ -9,26 +9,12 @@ const container = document.querySelectorAll('.container')
 const menu = document.querySelector('.menu-toggler')
 let darkMode = false
 
-const navigateHome = () => {
-    home.style.display = 'flex'
-    projects.style.display = 'none'
-    contact.style.display = 'none'
-
-    container[0].scrollTop = 0;
-
-    linkHome.classList.add('active-link')
-    linkProjects.classList.remove('active-link')
-    linkContact.classList.remove('active-link')
-
-    menu.checked = false
-}
-
 const navigateProjects = () => {
     home.style.display = 'none'
     projects.style.display = 'flex'
     contact.style.display = 'none'
 
-    container[1].scrollTop = 0;
+    container[0].scrollTop = 0;
 
     faders.forEach(fader => {
         fader.classList.remove('appear')
@@ -40,6 +26,20 @@ const navigateProjects = () => {
 
     linkHome.classList.remove('active-link')
     linkProjects.classList.add('active-link')
+    linkContact.classList.remove('active-link')
+
+    menu.checked = false
+}
+
+const navigateAbout = () => {
+    home.style.display = 'flex'
+    projects.style.display = 'none'
+    contact.style.display = 'none'
+
+    container[1].scrollTop = 0;
+
+    linkHome.classList.add('active-link')
+    linkProjects.classList.remove('active-link')
     linkContact.classList.remove('active-link')
 
     menu.checked = false
@@ -123,8 +123,7 @@ const toggleDarkMode = () => {
         logo.src = './assets/images/LogoLight1000px.png'
     }
 
-    // toggler.style.justifyContent = toggler.style.justifyContent === 'flex-end' 
-    // ? 'flex-start' : 'flex-end'
+    document.getElementById('scroll-to-top').src = darkMode ? './assets/graphics/scroll-to-top.png' : './assets/graphics/scroll-to-top-white.png'
 
     tog.style.marginLeft = tog.style.marginLeft !== 'calc(100% - 16px)' 
     ? 'calc(100% - 16px)' : '2px'
