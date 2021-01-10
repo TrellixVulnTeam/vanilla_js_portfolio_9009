@@ -442,7 +442,7 @@ body {
         position: relative;
         width: calc(100% - 5rem);
         margin: 1rem 2.5rem 0;
-        height: 5.5rem;
+        height: 4.7rem;
         overflow: hidden;
         background-color: rgba(255,255,255,0);
         outline: 10px solid rgba(255,255,255,0);
@@ -1066,12 +1066,14 @@ body {
         color: white;
 
 
-        .project-description::after {
-            background: $darkmode-bg-color;
-        }
-
-        .project-description p:first-child::after {
-            background: $darkmode-bg-color;
+        .project-description {
+            border-bottom: 0.5rem solid $darkmode-bg-color;
+            &::after {
+                background: $darkmode-bg-color;
+            }
+            p:first-child::after {
+                background: $darkmode-bg-color;
+            }
         }
 
         .project-links a {
