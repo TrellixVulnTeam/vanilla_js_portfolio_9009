@@ -5,7 +5,6 @@ const linkHome = document.getElementById('link-home')
 const linkProjects = document.getElementById('link-projects')
 const linkContact = document.getElementById('link-contact')
 const faders = document.querySelectorAll('.fader')
-const container = document.querySelectorAll('.container')
 const menu = document.querySelector('.menu-toggler')
 let darkMode = false
 
@@ -14,20 +13,20 @@ const navigateProjects = () => {
     projects.style.display = 'flex'
     contact.style.display = 'none'
 
-    container[0].scrollTop = 0;
-
+    
     faders.forEach(fader => {
         fader.classList.remove('appear')
     })
-
+    
     faders.forEach(fader => {
         observer.observe(fader)
     })
-
+    
     linkHome.classList.remove('active-link')
     linkProjects.classList.add('active-link')
     linkContact.classList.remove('active-link')
-
+    
+    window.scrollTo(0,0)
     menu.checked = false
 }
 
@@ -36,12 +35,11 @@ const navigateAbout = () => {
     projects.style.display = 'none'
     contact.style.display = 'none'
 
-    container[1].scrollTop = 0;
-
     linkHome.classList.add('active-link')
     linkProjects.classList.remove('active-link')
     linkContact.classList.remove('active-link')
 
+    window.scrollTo(0,0)
     menu.checked = false
 }
 
@@ -50,12 +48,11 @@ const navigateContact = () => {
     projects.style.display = 'none'
     contact.style.display = 'flex'
 
-    container[2].scrollTop = 0;
-
     linkHome.classList.remove('active-link')
     linkProjects.classList.remove('active-link')
     linkContact.classList.add('active-link')
 
+    window.scrollTo(0,0)
     menu.checked = false
 }
 
@@ -106,7 +103,7 @@ document.addEventListener('keyup', (e) => {
 })
 
 const scrollToTop = () => {
-    container[0].scrollTop = 0
+    window.scrollTo(0,0)
 }
 
 const toggleDarkMode = () => {
