@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nix Web Dev</title>
-    <link rel="shortcut icon" type="image/jpg" href="./assets/graphics/favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/graphics/favicon.ico"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="./index.css"/>
@@ -145,20 +145,14 @@
                 <img id='scroll-to-top' src="./assets/graphics/scroll-to-top.png" alt="Scroll To Top" width="30px">
             <span>Back to top</span>
             </div>
-            <div class='footer'>
-                <div>&copy;&nbsp;<span id='current-year'></span>&nbsp;Michael Nix</div>
-                <div></div>
-            </div>
         </div>
 
-<!-- Home page -->
+<!-- About page -->
 
-        <div id='home' class='container home-container'>
-            <div>
+        <div id='home' class='container about-container'>
+            <div class='text-content'>
+                <h1 class='intro'><span class='highlight-color'>Rediscovering</span><span>my roots</span></h1>
                 <p>After ten years as a clinical photographer in the National Health Service, I decided it was time for a change and shifted focus back to my first passion of computer programming.</p>
-                <p></p>
-            </div>
-            <div>
                 <p>My experience lies in the following technologies:
                 <br><br>
                     <ul>
@@ -170,15 +164,11 @@
                         <li>NodeJS</li>
                     </ul>
                 </p>
-            </div>
-            <div>
                 <p>
                     Having trained and worked as a photographer and videographer, I also have extensive experience using creative editing software, in particular Adobe products including Photoshop and Premiere Pro. I also have extensive experience using similar software such as Final Cut Pro.
                 </p>
                 <img src='./assets/graphics/adobe-logos.png' alt='design software experience' height='80px'>
-            </div>
-            <div>
-                <p>To see some of my work take a look at the <span onClick="navigateProjects()">Projects</span> page. Please get in touch if you'd like to find out more.</p>
+                <p>To see some of my work take a look at the <span class='inline-link' onClick="navigateProjects()">Projects</span> page. Please get in touch if you'd like to find out more.</p>
             </div>
         </div>
 
@@ -186,9 +176,23 @@
 
         <div id='contact' class='contact-container container'>
             <div>
-                <h1>Contact</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, eveniet itaque! Veniam atque ea natus! Recusandae vel sed eos perspiciatis odio tenetur architecto, aut, molestiae accusantium assumenda ut ad laboriosam. Aliquid perferendis, autem perspiciatis saepe, quo dolorum magnam beatae sint nam consequuntur architecto id corrupti reprehenderit quaerat ab neque in corporis rerum esse ducimus dolor! Minus cupiditate ipsa molestiae voluptatibus tenetur doloremque fuga. Velit consequuntur, alias dolorem incidunt ratione expedita officiis natus qui voluptate unde assumenda placeat pariatur saepe nemo.</p>
+                <div>
+                    <h3>Get in touch...</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio, laudantium voluptas obcaecati unde quisquam amet rem itaque molestiae quam dolores. Est aut veniam dolores quae natus error. Id, sed?
+                    </p>
+                </div>
+                <form>
+                    <input type='text' placeholder='Your name'/>
+                    <input type='text' placeholder='Your email address'/>
+                    <textarea placeholder='Type your message here...' rows='6'></textarea>
+                    <button>Send!</button>
+                </form>
             </div>
+        </div>
+        <div class='footer'>
+            <div>&copy;&nbsp;<span id='current-year'></span>&nbsp;Michael Nix</div>
+            <div></div>
         </div>
     </div>
 </body>

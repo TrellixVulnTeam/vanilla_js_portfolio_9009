@@ -14,33 +14,72 @@ body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
 
-    h1 {
-        margin-left: -2rem;
+    .text-content {
+        h1 {
+            margin-left: -2rem;
 
-        span {
-            padding-left: 5px;
-            font-size: 1.6rem;
+            span {
+                padding-left: 5px;
+                font-size: 1em;
+            }
+
+            .highlight-color {
+                font-size: 2em;
+                color: $highlightFont;
+            }
+        }
+
+        & > p {
+            margin: 1rem 0;
         }
     }
 
-    .highlight-color {
-        font-size: 3rem;
-        color: $highlightFont;
-    }
 
     div h2 {
         margin-top: 3rem;
     }
 
     .section-title {
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-        padding-bottom: 5px;
-        border-bottom: 1px solid black;
+        position: relative;
+        font-size: 2em;
+        margin: 4em 0 3em;
+        padding: 5px 12%;
+        width: 100%;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 40px;
+            height: 4px;
+            top: calc(50% - 4px);
+            left: calc(12% - 48px);
+            background: $highlightFont;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: 110px;
+            height: 150%;
+            background: url('./assets/graphics/curved-arrow.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     }
 
     .intro {
         margin-bottom: 2rem;
+    }
+
+    .inline-link {
+        text-decoration: underline;
+        // text-decoration-color: $highlightFont;
+        // background: $highlightFont;
+        // margin: 0 0.1em;
+        // outline: 0.2em solid $highlightFont;
+        &:hover {
+            cursor: pointer;
+            text-decoration-color: $highlightFont;
+        }
     }
 
     a {
@@ -338,13 +377,13 @@ body {
 
 .main {
     position: relative;
-    // height: 100vh;
+    min-height: 100vh;
     width: calc(100vw - ((#{$menu-width} + 15vw) / 2));
     margin-left: calc((#{$menu-width} + 15vw) / 2);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     .scrollToTop {
@@ -370,8 +409,11 @@ body {
         display: flex;
         flex-direction: column;
 
-        p {
+        h1, h2, p {
             align-self: flex-start;
+        }
+
+        p {
             margin-top: 1rem;
         }
 
@@ -384,7 +426,7 @@ body {
     }
 }
 
-.home-container, .contact-container {
+.about-container, .contact-container {
     justify-content: flex-start;
     gap: 2rem;
     align-items: center;
@@ -406,7 +448,54 @@ body {
             padding-bottom: 3rem;
         }
     }
+}
 
+.contact-container {
+    & > div {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        & > div {
+            align-self: flex-start;
+            width: 40%;
+        }
+        form {
+            align-self: flex-end;
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+
+            & > input, & > textarea {
+                margin-bottom: 1rem;
+                outline: none;
+                // border-radius: 10px;
+                border-top-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border: none;
+                background: rgba($darkmode-bg-color, 0.85);
+                color: white;
+                padding: 0.5rem;
+
+                &::placeholder {
+                    color: white;
+                }
+            }
+
+            button {
+                width: 40%;
+                margin: 1rem auto 0;
+                background: rgba($darkmode-bg-color, 0.85);
+                padding: 0.5rem;
+                color: white;
+                border-radius: 10px;
+            }
+
+            textarea {
+                resize: none;
+            }
+        }
+    }
 }
 
 #home {
@@ -438,25 +527,30 @@ body {
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
     .project-description {
+        border-bottom: 0.5rem solid white;
         align-self: center;
         position: relative;
         width: calc(100% - 5rem);
         margin: 1rem 2.5rem 0;
-        height: 4.7rem;
+        height: 5em;
         overflow: hidden;
         background-color: rgba(255,255,255,0);
         outline: 10px solid rgba(255,255,255,0);
         transition: background-color 600ms ease, outline 500ms ease;
 
+        h3 {
+            font-size: 1.5em;
+        }
+
         &::after {
             position: absolute;
             content: '[Read more...]';
-            text-align: right;
+            text-align: left;
             bottom: 0;
             padding-top: 0.2em;
-            right: 0;
-            width: 20%;
-            height: 1.3rem;
+            left: 0;
+            width: 100%;
+            height: 1.5em;
             font-size: 0.8em;
             background: white;
         }
@@ -470,7 +564,8 @@ body {
             // white-space: nowrap;
             overflow: hidden;
             // text-overflow: ellipsis;
-            padding-bottom: 1rem;
+            font-size: 1em;
+            padding-bottom: 1em;
             position: relative;
             height: 3.7rem;
 
@@ -541,17 +636,15 @@ body {
     .image-container {
         position: relative;
         background: white;
-        box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
+        width: 90%;
+        margin-bottom: 0.5rem;
+        // box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         z-index: 0;
-
-        img {
-            height: 100%;
-        }
 
         &::before, &::after {
             position: absolute;
             content: '';
-            bottom: 7px;
+            bottom: 9px;
             width: 45%;
             height: 20px;
             background: rgba(0,0,0,0.3);
@@ -573,6 +666,10 @@ body {
             &::before, &::after {
                 display: none;
             }
+        }
+
+        img {
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         }
     }
 
@@ -655,29 +752,12 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    align-self: flex-start;
     align-items: center;
-    min-height: 100px;
+    padding: 3rem 0;
     margin-top: 4rem;
-    width: 80%;
+    width: calc(100% - 30px);
     border-top: 1px solid $darkmode-bg-color;
-
-    &::before, &::after {
-        position: absolute;
-        content: '';
-        top: 0;
-        width: 1px;
-        height: 1px;
-        border: 5px solid $darkmode-bg-color;
-        border-bottom: 5px solid white;
-    }
-
-    &::before {
-        left: 0;
-    }
-
-    &::after {
-        right: 0;
-    }
 }
 
 @media screen and (hover: none) {
@@ -779,29 +859,9 @@ body {
             clip-path: none;
             padding: 0 0.75rem;
 
-            .description {
-                height: 3rem;
-
-                &::after {
-                    top: 2rem;
-                }
-            }
-
-            .image-container {
-                margin: 0 auto 1rem;
-                &::before, &::after {
-                    display: none;
-                }
-            }
-
             .project-description {
-                height: 4rem;
+                height: 4.2rem;
                 border-bottom: 0.5rem solid white;
-
-                &::after {
-                    width: 25%;
-                    bottom: -0.2rem;
-                }
 
                 &:hover {
                     margin: 2rem 0 0;
@@ -822,6 +882,13 @@ body {
                     & > div {
                         margin: 0.5rem;
                     }
+                }
+            }
+
+            .image-container {
+                margin: 0 auto 1rem;
+                &::before, &::after {
+                    display: none;
                 }
             }
 
@@ -936,7 +1003,7 @@ body {
 @media screen and (min-width: 1900px) {
 
     body {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .main::before {
@@ -997,7 +1064,7 @@ body {
 @media screen and (min-width: 3000px) {
 
     body {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     .menu-container .menu {
@@ -1028,8 +1095,18 @@ body {
         }
 
         .fader {
+            max-width: 3000px;
             padding: 3rem 4rem;
             margin-top: 10rem;
+            font-size: 1.2em;
+
+            .project-description::after {
+                bottom: 0.2em;
+            }
+
+            .image-container::before, .image-container::after {
+                bottom: 15px;
+            }
         }
     }
 }
@@ -1056,15 +1133,10 @@ body {
         background: linear-gradient(to bottom, $darkmode-bg-color 20%, rgba(0,0,0,0) 100%);
     }
 
-    .section-title {
-        border-bottom: 1px solid white;
-    }
-
     .fader {
         background: none;
         box-shadow: 0 0 4px 0 rgba($highlightFont, 0.7);
         color: white;
-
 
         .project-description {
             border-bottom: 0.5rem solid $darkmode-bg-color;
@@ -1074,6 +1146,10 @@ body {
             p:first-child::after {
                 background: $darkmode-bg-color;
             }
+        }
+
+        .image-container {
+            background: $darkmode-bg-color;
         }
 
         .project-links a {
