@@ -474,6 +474,7 @@ body {
                 border-bottom-right-radius: 10px;
                 border: none;
                 background: rgba($darkmode-bg-color, 0.85);
+                border: 1px solid white;
                 color: white;
                 padding: 0.5rem;
 
@@ -487,8 +488,13 @@ body {
                 margin: 1rem auto 0;
                 background: rgba($darkmode-bg-color, 0.85);
                 padding: 0.5rem;
+                border: 1px solid white;
                 color: white;
                 border-radius: 10px;
+
+                &:hover, &:focus {
+                    box-shadow: 0 0 3px 3px rgba(255,255,255,0.4);
+                }
             }
 
             textarea {
@@ -897,6 +903,25 @@ body {
                 padding: 0.25rem 1rem;
             }
         }
+
+        .contact-container {
+            & > div {
+                flex-direction: column;
+                & > div {
+                    width: 80%;
+                    align-self: center;
+                    margin-bottom: 2rem;
+                }
+                form {
+                    width: 80%;
+                    align-self: center;
+                }
+            }
+        }
+
+        .footer {
+            margin: 0 auto;
+        }
     }
 
     .menu-container {
@@ -1158,19 +1183,7 @@ body {
         }
     }
 
-
-
     .footer {
         border-top: 1px solid white;
-    
-        &::before, &::after {
-            position: absolute;
-            content: '';
-            top: 0;
-            width: 1px;
-            height: 1px;
-            border: 5px solid white;
-            border-bottom: 5px solid $darkmode-bg-color;
-        }
     }
 }
