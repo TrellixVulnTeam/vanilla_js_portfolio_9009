@@ -12,7 +12,6 @@ const navigateProjects = () => {
     home.style.display = 'none'
     projects.style.display = 'flex'
     contact.style.display = 'none'
-
     
     faders.forEach(fader => {
         fader.classList.remove('appear')
@@ -111,8 +110,8 @@ const scrollToTop = () => {
 
 const toggleDarkMode = () => {
     const logo = document.getElementById('logo')
-    // const toggler = document.getElementById('darkmode-toggler')
-    const tog = document.getElementById('tog')
+    const toggler = document.getElementById('darkmode-toggler')
+    // const toggler = document.getElementById('toggler')
 
     if (document.body.clientWidth <= 750) {
         const source = darkMode
@@ -125,8 +124,11 @@ const toggleDarkMode = () => {
 
     document.getElementById('scroll-to-top').src = darkMode ? './assets/graphics/scroll-to-top.png' : './assets/graphics/scroll-to-top-white.png'
 
-    tog.style.marginLeft = tog.style.marginLeft !== 'calc(100% - 16px)' 
-    ? 'calc(100% - 16px)' : '2px'
+    // toggler.style.marginLeft = tog.style.marginLeft !== 'calc(100% - 16px)' 
+    // ? 'calc(100% - 16px)' : '2px'
+
+    toggler.style.justifyContent = toggler.style.justifyContent !== 'flex-end' 
+    ? 'flex-end' : 'flex-start'
 
     document.getElementById('body').classList.toggle('dark-mode')
 

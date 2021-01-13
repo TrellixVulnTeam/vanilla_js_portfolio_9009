@@ -239,6 +239,7 @@ body {
                 width: 30px;
                 height: 20px;
                 display: flex;
+                justify-content: flex-start;
                 align-items: center;
                 border: 1px solid white;
                 border-radius: 10px;
@@ -602,26 +603,27 @@ body {
             white-space: normal;
             overflow: visible;
             width: calc(100% - 2rem);
-            margin: 1.5rem auto;
+            margin: 1.5em auto;
+            border: none;
 
             &::after {
                 display: none;
             }
 
             & + .image-container {
-                margin-top: 7.5rem;
+                margin-top: 6em;
                 opacity: 0.05;
                 transition: opacity 600ms ease-out;
             }
 
             h3 {
-                font-size: 1.5rem;
+                font-size: 1.5em;
             }
 
             .description {
                 text-align: center;
                 font-size: 1.2em;
-                margin-top: 2rem;
+                margin-top: 1em;
                 padding: 0 15%;
                 white-space: normal;
                 height: 70%;
@@ -920,7 +922,7 @@ body {
         }
 
         .footer {
-            margin: 0 auto;
+            margin: 2rem auto 0;
         }
     }
 
@@ -1094,6 +1096,31 @@ body {
 
     .menu-container .menu {
 
+        #darkmode-container {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            right: 0;
+            padding-right: 15%;
+            height: 60px;
+
+            #darkmode-toggler {
+                width: 90px;
+                height: 60px;
+                border-radius: 30px;
+                display: flex;
+                justify-content: left;
+                    
+                div {
+                    width: 42px;
+                    height: 42px;
+                    margin: 0 4px;
+                    margin-left: 4px;
+                    border-radius: 21px;
+                }
+            }
+        }
+
         ul {
             font-size: 2.5rem;
         }
@@ -1120,7 +1147,7 @@ body {
         }
 
         .fader {
-            max-width: 3000px;
+            max-width: 2300px;
             padding: 3rem 4rem;
             margin-top: 10rem;
             font-size: 1.2em;
@@ -1131,6 +1158,10 @@ body {
 
             .image-container::before, .image-container::after {
                 bottom: 15px;
+            }
+
+            .project-links a {
+                padding: 2rem;
             }
         }
     }
@@ -1170,6 +1201,10 @@ body {
             }
             p:first-child::after {
                 background: $darkmode-bg-color;
+            }
+
+            &:hover {
+                border: none;
             }
         }
 
