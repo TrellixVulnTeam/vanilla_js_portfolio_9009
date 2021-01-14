@@ -17,16 +17,15 @@ body {
     .text-content {
         h1 {
             margin-left: -2rem;
+        }
+        span {
+            padding-left: 5px;
+            font-size: 1em;
+        }
 
-            span {
-                padding-left: 5px;
-                font-size: 1em;
-            }
-
-            .highlight-color {
-                font-size: 2em;
-                color: $highlightFont;
-            }
+        .highlight-color {
+            font-size: 2em;
+            color: $highlightFont;
         }
 
         & > p {
@@ -151,7 +150,7 @@ body {
             display: flex;
             align-items: center;
             height: 100%;
-            padding: 0.75rem;
+            padding: 0.6em;
 
             a {
                 cursor: pointer;
@@ -163,13 +162,13 @@ body {
                 }
 
                 &:last-child {
-                    margin-right: 1.5rem;
+                    margin-right: 2em;
                 }
             }
 
             .header-link {
                 height: 100%;
-                width: 1.75rem;
+                width: 1.75em;
                 background-image: url('./assets/github-logo.png');
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -261,7 +260,7 @@ body {
             margin-top: 20vh;
             margin-right: 25%;
             list-style: none;
-            font-size: 1rem;
+            font-size: 1em;
             transform: rotate(4deg);
             display: flex;
             flex-direction: column;
@@ -409,10 +408,7 @@ body {
         width: 70%;
         display: flex;
         flex-direction: column;
-
-        h1, h2, p {
-            align-self: flex-start;
-        }
+        align-items: flex-start;
 
         p {
             margin-top: 1rem;
@@ -425,6 +421,46 @@ body {
             padding-bottom: 3rem;
         }
     }
+
+    // .CTA {
+    //     width: 40%;
+    //     height: 200px;
+        // background-image: url('./assets/graphics/CTA_Arrow.png');
+        // background-position: center;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // margin: 3em 0;
+        .title-flow {
+            margin: 3em 0;
+            position: relative;
+            font-size: 2em;
+            margin-right: 1em;
+            background: white;
+            padding: 0 5px;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 200%;
+                position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &::before {
+                bottom: 25%;
+                left: -50%;
+                background-image: url('./assets/graphics/arrow-left.png');
+            }
+            &::after {
+                top: 50%;
+                right: -50%;
+                background-image: url('./assets/graphics/arrow-right.png');
+            }
+        }
+    // }
 }
 
 .about-container, .contact-container {
@@ -526,7 +562,7 @@ body {
     max-width: 1300px;
     opacity: 0;
     color: black;
-    margin-bottom: 2rem;
+    margin-bottom: 4em;
     border-radius: 6px;
     box-shadow: 0 2px 8px 0px rgba($primary, 0.95);
     // clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
@@ -695,7 +731,7 @@ body {
             align-items: center;
             background: rgba(0,0,0,0.05);
             border: 1px solid black;
-            padding: 1rem;
+            padding: 1em;
             color: black;
             text-align: center;
             text-decoration: none;
@@ -763,9 +799,9 @@ body {
     align-self: flex-start;
     align-items: center;
     padding: 3rem 0;
-    margin-top: 4rem;
-    width: calc(100% - 30px);
-    border-top: 1px solid $darkmode-bg-color;
+    margin: 4rem auto 0;
+    width: calc(100% - 90px);
+    border-top: 1px solid $highlightFont;
 }
 
 @media screen and (hover: none) {
@@ -899,11 +935,6 @@ body {
                     display: none;
                 }
             }
-
-            .project-links a {
-                font-size: 0.5rem;
-                padding: 0.25rem 1rem;
-            }
         }
 
         .contact-container {
@@ -956,7 +987,7 @@ body {
             ul {
                 margin: 0;
                 transform: rotate(0);
-                font-size: 1.5rem;
+                font-size: 2em;
                 .link {
                     transform: rotate(0);
                 }
@@ -1054,6 +1085,31 @@ body {
 
     .menu-container .menu {
 
+        #darkmode-container {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            right: 0;
+            padding-right: 15%;
+            height: 40px;
+
+            #darkmode-toggler {
+                width: 60px;
+                height: 40px;
+                border-radius: 20px;
+                display: flex;
+                justify-content: left;
+                    
+                div {
+                    width: 28px;
+                    height: 28px;
+                    margin: 0 4px;
+                    margin-left: 4px;
+                    border-radius: 14px;
+                }
+            }
+        }
+
         ul {
             font-size: 1.8rem;
         }
@@ -1062,7 +1118,7 @@ body {
     .projects-container {
 
         .fader {
-            margin-top: 4rem;
+            // margin-top: 4rem;
             padding: 2.5rem;
 
             &:first-child {
@@ -1094,42 +1150,9 @@ body {
         font-size: 2.5rem;
     }
 
-    .menu-container .menu {
-
-        #darkmode-container {
-            position: absolute;
-            top: 40px;
-            width: 100%;
-            right: 0;
-            padding-right: 15%;
-            height: 60px;
-
-            #darkmode-toggler {
-                width: 90px;
-                height: 60px;
-                border-radius: 30px;
-                display: flex;
-                justify-content: left;
-                    
-                div {
-                    width: 42px;
-                    height: 42px;
-                    margin: 0 4px;
-                    margin-left: 4px;
-                    border-radius: 21px;
-                }
-            }
-        }
-
-        ul {
-            font-size: 2.5rem;
-        }
-    }
-
     .header {
         .banner {
             max-height: calc(#{$contactHeight} * 2.5);
-            padding: 0.5rem;
             .contact-links span {
                 font-size: 2.5rem;
             }
@@ -1147,10 +1170,9 @@ body {
         }
 
         .fader {
-            max-width: 2300px;
+            max-width: 1600px;
             padding: 3rem 4rem;
-            margin-top: 10rem;
-            font-size: 1.2em;
+            font-size: 1em;
 
             .project-description::after {
                 bottom: 0.2em;
@@ -1158,10 +1180,6 @@ body {
 
             .image-container::before, .image-container::after {
                 bottom: 15px;
-            }
-
-            .project-links a {
-                padding: 2rem;
             }
         }
     }
