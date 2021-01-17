@@ -33,7 +33,6 @@ body {
         }
     }
 
-
     div h2 {
         margin-top: 3rem;
     }
@@ -108,7 +107,7 @@ body {
         width: 100%;
         height: calc(#{$contactHeight} * 2.5);
         z-index: 1;
-        background: linear-gradient(to bottom, white 20%, rgba(0,0,0,0) 80%);
+        background: linear-gradient(to bottom, white 20%, transparent 80%);
     }
 
     .banner {
@@ -243,6 +242,7 @@ body {
                 border: 1px solid white;
                 border-radius: 10px;
                 cursor: pointer;
+                transition: justify-content 150ms ease-in;
                     
                 div {
                     width: 14px;
@@ -251,7 +251,6 @@ body {
                     margin-left: 2px;
                     border-radius: 7px;
                     background: rgb(230,230,230);
-                    transition: margin 150ms ease-in;
                 }
             }
         }
@@ -415,8 +414,14 @@ body {
         }
 
         ul {
-            margin: 0;
+            margin: 0 auto 2em;
+            padding-right: 10%;
         }
+
+        img {
+            margin: 0 auto;
+        }
+
         &:last-child {
             padding-bottom: 3rem;
         }
@@ -434,7 +439,7 @@ body {
         // align-items: center;
         // margin: 3em 0;
         .title-flow {
-            margin: 3em 0;
+            margin: 3em 4em;
             position: relative;
             font-size: 2em;
             margin-right: 1em;
@@ -476,10 +481,6 @@ body {
 
         p {
             align-self: flex-start;
-        }
-
-        ul {
-            margin: 0;
         }
         &:last-child {
             padding-bottom: 3rem;
@@ -795,13 +796,22 @@ body {
 .footer {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-self: flex-start;
+    // align-self: flex-start;
     align-items: center;
-    padding: 3rem 0;
+    padding: 1.5rem 0;
     margin: 4rem auto 0;
     width: calc(100% - 90px);
+    // width: 30vw;
+    clip-path: polygon(1% 0%, 99% 0%, 100% 100%, 0 100%);
     border-top: 1px solid $highlightFont;
+    color: white;
+    background: $darkmode-bg-color;
+
+    div:first-child {
+        margin-bottom: 1em;
+    }
 }
 
 @media screen and (hover: none) {
@@ -1065,7 +1075,7 @@ body {
     }
 
     .main::before {
-        background: linear-gradient(to bottom, white 55%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, white 55%, transparent 100%);
     }
 
     .header {
@@ -1204,7 +1214,11 @@ body {
     }
 
     .header::before {
-        background: linear-gradient(to bottom, $darkmode-bg-color 20%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom, $darkmode-bg-color 20%, transparent 100%);
+    }
+
+    .title-flow {
+        background: $darkmode-bg-color;
     }
 
     .fader {

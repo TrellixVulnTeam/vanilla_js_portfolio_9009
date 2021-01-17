@@ -56,7 +56,7 @@ const navigateContact = () => {
 }
 
 const options = {
-    threshold: 0.1
+    threshold: 0.4
 }
 
 const observer = new IntersectionObserver((entries, observer) => {
