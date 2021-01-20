@@ -685,6 +685,7 @@ body {
         margin-bottom: 0.5rem;
         // box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         z-index: 0;
+        cursor: pointer;
 
         &::before, &::after {
             position: absolute;
@@ -705,12 +706,6 @@ body {
         &::after {
             right: 10px;
             transform: rotate(1.5deg);
-        }
-
-        &:hover {
-            &::before, &::after {
-                display: none;
-            }
         }
 
         img {

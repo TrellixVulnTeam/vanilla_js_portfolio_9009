@@ -78,7 +78,7 @@ const image = document.querySelector('.image')
 imageContainer.forEach((el, i) => {
     const newImg = imageContainer[i].id
     console.log(imageContainer[i])
-    el.addEventListener('mouseenter', () => {
+    el.addEventListener('click', () => {
         image.style.backgroundImage = `url(./assets/gifs/${newImg}.gif)`
         fullScreen.style.display = 'flex'
     })
