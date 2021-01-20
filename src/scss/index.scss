@@ -804,10 +804,10 @@ body {
     margin: 4rem auto 0;
     width: calc(100% - 90px);
     // width: 30vw;
-    clip-path: polygon(1% 0%, 99% 0%, 100% 100%, 0 100%);
-    border-top: 1px solid $highlightFont;
-    color: white;
-    background: $darkmode-bg-color;
+    // clip-path: polygon(1% 0%, 99% 0%, 100% 100%, 0 100%);
+    border-top: 1px solid $darkmode-bg-color;
+    color: black;
+    // background: $darkmode-bg-color;
 
     div:first-child {
         margin-bottom: 1em;
@@ -1251,6 +1251,7 @@ body {
     }
 
     .footer {
+        color: white;
         border-top: 1px solid white;
     }
 }
