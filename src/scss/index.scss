@@ -439,7 +439,7 @@ body {
         // align-items: center;
         // margin: 3em 0;
         .title-flow {
-            margin: 3em 4em;
+            margin: 2.5em 4em;
             position: relative;
             font-size: 2em;
             margin-right: 1em;
@@ -457,12 +457,12 @@ body {
             &::before {
                 bottom: 25%;
                 left: -50%;
-                background-image: url('./assets/graphics/arrow-left.png');
+                background-image: url('./assets/graphics/ArrowLeft.png');
             }
             &::after {
                 top: 50%;
                 right: -50%;
-                background-image: url('./assets/graphics/arrow-right.png');
+                background-image: url('./assets/graphics/ArrowRight.png');
             }
         }
     // }
