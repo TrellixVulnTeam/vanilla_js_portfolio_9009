@@ -84,7 +84,6 @@ imageContainer.forEach((el, i) => {
     })
     image.addEventListener('mouseleave', () => {
         fullScreen.style.display = 'none'
-        // document.exitFullscreen()
     })
 })
 
@@ -92,7 +91,6 @@ const closeFullScreen = document.querySelector('.close-fullscreen')
 
 const closeScreen = () => {
     fullScreen.style.display = 'none'
-    // document.exitFullscreen()
 }
 
 document.addEventListener('keyup', (e) => {
@@ -111,21 +109,17 @@ const scrollToTop = () => {
 const toggleDarkMode = () => {
     const logo = document.getElementById('logo')
     const toggler = document.getElementById('darkmode-toggler')
-    // const toggler = document.getElementById('toggler')
 
     if (document.body.clientWidth <= 750) {
         const source = darkMode
-        ? './assets/images/LogoDark1000px.png'
-        : './assets/images/LogoLight1000px.png'
+        ? './assets/graphics/LogoDark-500px.png'
+        : './assets/graphics/LogoLight-500px.png'
         logo.src = source
     } else {
-        logo.src = './assets/images/LogoLight1000px.png'
+        logo.src = './assets/graphics/LogoLight-500px.png'
     }
 
     document.getElementById('scroll-to-top').src = darkMode ? './assets/graphics/scroll-to-top.png' : './assets/graphics/scroll-to-top-white.png'
-
-    // toggler.style.marginLeft = tog.style.marginLeft !== 'calc(100% - 16px)' 
-    // ? 'calc(100% - 16px)' : '2px'
 
     toggler.style.justifyContent = toggler.style.justifyContent !== 'flex-end' 
     ? 'flex-end' : 'flex-start'
@@ -144,8 +138,8 @@ const setLogo = () => {
     const logo = document.getElementById('logo')
 
     logo.src = docWidth > 750 
-    ? './assets/images/LogoLight1000px.png'
-    : './assets/images/LogoDark1000px.png'
+    ? './assets/graphics/LogoLight-500px.png'
+    : './assets/graphics/LogoDark-500px.png'
 
     navigateProjects()
 

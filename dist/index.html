@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nix Web Dev</title>
-    <link rel="shortcut icon" type="image/jpg" href="./assets/graphics/favicon3.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/graphics/favicon.ico"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="./index.css"/>
@@ -32,7 +32,7 @@
         </div>
         <div class='banner'>
             <div class='logo' onClick="navigateProjects()">
-                <img id='logo' src='./assets/images/LogoLight1000px.png' alt='logo' height='110%'/>
+                <img id='logo' src='./assets/graphics/LogoLight-500px.png' alt='logo' height='110%'/>
             </div>
             <div class='contact-links'>
                 <a target='_blank' href='mailto:mpnix@protonmail.com' class='header-link' id='email-link'></a>
@@ -54,12 +54,6 @@
             <div class='text-content'>
                 <h1><span class='highlight-color'>Hello!</span><span>I'm Michael,</span></h1>
                 <h3 class='intro'>a full stack web developer based in Manchester, UK.</h3>
-
-                <!-- <Picture>
-                    <source srcset="./assets/testPicture/500.png" media="(max-width: 600px)">
-                    <source srcset="./assets/testPicture/original.png">
-                    <img src="./assets/testPicture/250.png" alt="testing">
-                </Picture> -->
                 <p>
                     Passionate about building websites and apps with a variety of technologies,
                     I enjoy designing the visual elements of the front end and the backend inner workings equally.
@@ -83,17 +77,16 @@
                             I saw it was in need of a redesign and realised it was a great project to take on to learn more about online payment integration.
                         </p>
                         <p>
-                            This project gave me a great insight into integrating payment, using PayPal on this occasion. I also added the option to toggle between two currencies.
+                            This project gave me a great insight into integrating payment methods, using PayPal on this occasion. I also added the option to toggle between Pounds Sterling and Euros currencies.
                         </p>
                     </div>
                 </div>
                 <div class='image-container' id='green-oil'>
-                    <Picture>
-                        <source media="(max-width: 900px)" srcset="./assets/images/project-images/green-oil/green-oil-700px.png">
-                        <source media="(max-width: 3000px)" srcset="./assets/images/project-images/green-oil/green-oil-900px.png">
-                        <source media="(min-width: 3000px)" srcset="./assets/images/project-images/green-oil/green-oil-1200px.png">
-                        <img src='./assets/images/project-images/green-oil/green-oil.png' alt='e-commerce website with PayPal integration' width='100%' />
-                    </Picture>
+                    <img src='./assets/images/project-images/green-oil/green-oil-700px.png' width="100%"
+                    srcset="./assets/images/project-images/green-oil/green-oil-700px.png 700w, 
+                    ./assets/images/project-images/green-oil/green-oil-900px.png 900w, 
+                    ./assets/images/project-images/green-oil/green-oil-1200px.png 1200w"
+                    alt='e-commerce website with PayPal integration' />
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/green-oil">VIEW CODE</a>
@@ -109,20 +102,22 @@
                             Website for vegan animal activism group 'Manchester Animal Climate Action'.
                         </p>
                         <p>
-                            MACA were in need of a website overhaul as their original site had styling and layout issues and was very unresponsive.
+                            Manchester Animal Action were in the process of rebranding to Manchester Animal Climate Action. They were also in need of a website overhaul as their original site has various design issues.
                         </p>
                         <p>
-                            I built this new website using VueJS, basing the content on their original site, but restructuring for easier navigation and better responsiveness for various devices.
+                            I built this new website using VueJS, basing the initial content on their original site, but improving the layout and responsiveness for different devices and screen sizes.
+                        </p>
+                        <p>
+                            I also made suggestions to improve and add to the site content, such as relevant news, advice and vegan recipes etc. I'm currently working with MACA to finalise content.
                         </p>
                     </div>
                 </div>
                 <div class='image-container' id='maca'>
-                    <Picture>
-                        <source media="(max-width: 900px)" srcset="./assets/images/project-images/maca/maca-700px.png">
-                        <source media="(max-width: 3000px)" srcset="./assets/images/project-images/maca/maca-900px.png">
-                        <source media="(min-width: 3000px)" srcset="./assets/images/project-images/maca/maca-1200px.png">
-                        <img src='./assets/images/project-images/maca/maca.png' alt='Mancester Animal Climate Action' width='100%' />
-                    </Picture>
+                    <img src='./assets/images/project-images/maca/maca-700px.png' width="100%"
+                    srcset="./assets/images/project-images/maca/maca-700px.png 700w, 
+                    ./assets/images/project-images/maca/maca-900px.png 900w, 
+                    ./assets/images/project-images/maca/maca-1200px.png 1200w"
+                    alt='e-commerce website with PayPal integration' />
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/maca-website">VIEW CODE</a>
@@ -141,20 +136,20 @@
                             This was built to replace an old MS Access database which had been in use since the mid 90s.
                         </p>
                         <p>
-                            Probably my most complex project to date, but also the most enjoyable beneficial as I really got my head around the full capabilities of React.
+                            Probably my most complex project to date, but also the most enjoyable as I was able to really get to grips with the full capabilities of React.
                         </p>
                         <p>
-                            I initially took a class based approach to building the app, but later on rebuilt it using React Hooks and Redux.
+                            I initially took a class based approach to building the app, but having learnt how to use React Hooks and Redux I rebuilt the app. This was a great learning experience, reviewing my original code and discovering where it could be improved to improve the functionality and reliability of the app.
                         </p>
                     </div>
                 </div>
                 <div class='image-container' id='record-keeper'>
-                    <Picture>
-                        <source media="(max-width: 900px)" srcset="./assets/images/project-images/record-keeper/record-keeper-700px.png">
-                        <source media="(max-width: 3000px)" srcset="./assets/images/project-images/record-keeper/record-keeper-900px.png">
-                        <source media="(min-width: 3000px)" srcset="./assets/images/project-images/record-keeper/record-keeper-1200px.png">
-                        <img src='./assets/images/project-images/record-keeper/record-keeper.png' alt='database built with ReactJS and Postgresql' width='100%' />
-                    </Picture>
+                    <img src='./assets/images/project-images/record-keeper/record-keeper-700px.png' 
+                    srcset="./assets/images/project-images/record-keeper/record-keeper-700px.png 700w,
+                    ./assets/images/project-images/record-keeper/record-keeper-900px.png 900w,
+                    ./assets/images/project-images/record-keeper/record-keeper-1200px.png 1200w"
+                    alt='database built with ReactJS and Postgresql' width='100%' 
+                    />
                 </div>
                 <div class='project-links'>
                     <a target='_blank' href="https://github.com/c0llid3r/recordkeeper">VIEW CODE</a>
@@ -172,9 +167,9 @@
 
         <div id='home' class='container about-container'>
             <div class='text-content'>
-                <h3 class='intro'><span class='highlight-color'>Rediscovering a love of coding</span></h3>
-                <p>I first discovered my love for programming, when I was around ten years old, playing with a BBC MICRO computer. I learned how to print out my name multiple times with a loop and that's all it took to get me hooked. A few years later I taught myself Visual Basic, and from there moved on to C++ and soon after Assembly. And of course once I had an internet connection I began learning about HTML.</p>
-                <p>At some point my interest turned to photography, although I always kept a hand in programming and web design, tinkering with the odd project from time to time and building the occasional website for friends and colleagues. Now, with over ten years working as a clinical photographer in the National Health Service, I find myself being drawn back to my life long love of computer programming.</p>
+                <h3 class='intro'><span class='highlight-color'>Back to my roots</span></h3>
+                <p>I first discovered my love for programming when I was around ten years old, playing with a BBC MICRO computer. I learned how to print out my name multiple times with a loop and that's all it took to get me hooked. A few years later I taught myself Visual Basic, and from there moved on to tinkering with C++ and Assembly. Of course once I had an internet connection I began learning about HTML. I loved building something from scratch using nothing more than a simple text editor.</p>
+                <p>At some point my interest turned to photography, although I always kept my hand in programming and web design, building the occasional website for friends and colleagues. Now, with over ten years working as a clinical photographer in the NHS, I find myself being drawn back to my coding.</p>
                 <p>My experience lies primarily in the following technologies:
                 <br><br>
                     <ul>
@@ -187,11 +182,13 @@
                         <li>Postgresql</li>
                     </ul>
 
-                    However I continue to enjoy learning new skills and experimenting with technologies as I discover them.
+                    <p>
+                        Those are my core skills, however the fun for me will always be learning and experimenting, so I never grow tired of acquiring new skills, such as <a target="_blank" href="https://c0llid3r.github.io/snake"><span id="snake">HTML Canvas</span></a>.
+                    </p>
                 </p>
                 <h3>Design Skills</h3>
                 <p>
-                    Having trained and worked as a photographer and videographer, I also have extensive experience using creative editing software, in particular Adobe products including Photoshop and Premiere Pro. I also have extensive experience using similar software such as Final Cut Pro.
+                    Having trained and worked as a photographer and videographer, I also have extensive experience using creative editing software, in particular Adobe products including Photoshop, Illustrator and Premiere Pro.
                 </p>
                 <img src='./assets/graphics/adobe-logos.png' alt='design software experience' height='80px'>
                 <p>To see some of my work take a look at the<span class='inline-link' onClick="navigateProjects()">Projects</span> page and please get in touch if you'd like to collaborate or find out more.</p>
@@ -217,9 +214,9 @@
             </div>
         </div>
         <div class='footer'>
-            <div>&copy;&nbsp;<span id='current-year'></span>&nbsp;Michael Nix</div>
+            <div>&copy;&nbsp;<span id='current-year'>2021</span>&nbsp;Michael Nix</div>
             <div>07597 832 857</div>
-            <div>mpnix@protonmail.com</div>
+            <div><a href="mailto:mpnix@protonmail.com">mpnix@protonmail.com</a></div>
         </div>
     </div>
 </body>

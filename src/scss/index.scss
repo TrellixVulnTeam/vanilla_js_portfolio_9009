@@ -23,6 +23,15 @@ body {
             font-size: 1em;
         }
 
+        #snake {
+            padding: 0;
+            text-decoration: underline;
+            cursor: url('./assets/graphics/cursor.png'), pointer;
+            &:hover {
+                text-decoration-color: $highlightFont;
+            }
+        }
+
         .highlight-color {
             font-size: 2em;
             color: $highlightFont;
@@ -37,43 +46,12 @@ body {
         margin-top: 3rem;
     }
 
-    .section-title {
-        position: relative;
-        font-size: 2em;
-        margin: 4em 0 3em;
-        padding: 5px 12%;
-        width: 100%;
-        &::before {
-            position: absolute;
-            content: '';
-            width: 40px;
-            height: 4px;
-            top: calc(50% - 4px);
-            left: calc(12% - 48px);
-            background: $highlightFont;
-        }
-        &::after {
-            position: absolute;
-            content: '';
-            width: 110px;
-            height: 150%;
-            background: url('./assets/graphics/curved-arrow.png');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    }
-
     .intro {
         margin-bottom: 2rem;
     }
 
     .inline-link {
         text-decoration: underline;
-        // text-decoration-color: $highlightFont;
-        // background: $highlightFont;
-        // margin: 0 0.1em;
-        // outline: 0.2em solid $highlightFont;
         &:hover {
             cursor: pointer;
             text-decoration-color: $highlightFont;
@@ -81,11 +59,11 @@ body {
     }
 
     a {
-        color: white;
-        text-decoration: none;
+        text-decoration: underline;
 
         &:hover {
-            color: pink;
+            cursor: pointer;
+            text-decoration-color: $highlightFont;
         }
     }
 }
@@ -163,32 +141,38 @@ body {
                 &:last-child {
                     margin-right: 2em;
                 }
+
+                .contact-svgs {
+                    height: 100%;
+                    width: 1.75em;
+                    border: 2px solid red;
+                }
             }
 
             .header-link {
                 height: 100%;
                 width: 1.75em;
-                background-image: url('./assets/github-logo.png');
+                background-image: url('./assets/graphics/github-logo.png');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
 
                 &:hover {
-                    background-image: url('./assets/github-logo-hover.png');
+                    background-image: url('./assets/graphics/github-logo-hover.png');
                 }
             }
 
             #email-link {
-                background-image: url('./assets/email-icon.png');
+                background-image: url('./assets/graphics/email-icon.png');
                 &:hover {
-                    background-image: url('./assets/email-icon-hover.png');
+                    background-image: url('./assets/graphics/email-icon-hover.png');
                 }
             }
             #linkedin-link {
-                background-image: url('./assets/linkedin-logo.png');
+                background-image: url('./assets/graphics/linkedin-logo.png');
 
                 &:hover {
-                    background-image: url('./assets/linkedin-logo-hover.png');
+                    background-image: url('./assets/graphics/linkedin-logo-hover.png');
                 }
             }
         }
@@ -296,7 +280,6 @@ body {
                 text-shadow: 0 0 4px $highlightFont;
                 &:hover {
                     text-shadow: 0 0 4px $highlightFont;
-                    // text-decoration: none;
                     &::before {
                         display: none;
                     }
@@ -426,18 +409,6 @@ body {
             padding-bottom: 3rem;
         }
     }
-
-    // .CTA {
-    //     width: 40%;
-    //     height: 200px;
-        // background-image: url('./assets/graphics/CTA_Arrow.png');
-        // background-position: center;
-        // background-size: contain;
-        // background-repeat: no-repeat;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // margin: 3em 0;
         .title-flow {
             margin: 2.5em 4em;
             position: relative;
@@ -465,7 +436,6 @@ body {
                 background-image: url('./assets/graphics/ArrowRight.png');
             }
         }
-    // }
 }
 
 .about-container, .contact-container {
@@ -480,6 +450,7 @@ body {
         align-items: center;
 
         p {
+            margin: 1em 0;
             align-self: flex-start;
         }
         &:last-child {
@@ -507,7 +478,6 @@ body {
             & > input, & > textarea {
                 margin-bottom: 1rem;
                 outline: none;
-                // border-radius: 10px;
                 border-top-left-radius: 10px;
                 border-bottom-right-radius: 10px;
                 border: none;
@@ -522,7 +492,7 @@ body {
             }
 
             button {
-                width: 40%;
+                width: 100px;
                 margin: 1rem auto 0;
                 background: rgba($darkmode-bg-color, 0.85);
                 padding: 0.5rem;
@@ -558,15 +528,16 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    width: 60%;
-    max-width: 1300px;
+    width: 55%;
+    max-width: 1600px;
     opacity: 0;
     color: black;
     margin-bottom: 4em;
+    padding: 1.5em 0.5em;
     border-radius: 6px;
     box-shadow: 0 2px 8px 0px rgba($primary, 0.95);
-    // clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
     transform: translateX(25vw);
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
@@ -575,7 +546,7 @@ body {
         align-self: center;
         position: relative;
         width: calc(100% - 5rem);
-        margin: 1rem 2.5rem 0;
+        margin: 0 2.5rem;
         height: 5em;
         overflow: hidden;
         background-color: rgba(255,255,255,0);
@@ -605,9 +576,7 @@ body {
         }
 
         .description {
-            // white-space: nowrap;
             overflow: hidden;
-            // text-overflow: ellipsis;
             font-size: 1em;
             padding-bottom: 1em;
             position: relative;
@@ -681,9 +650,7 @@ body {
     .image-container {
         position: relative;
         background: white;
-        width: 90%;
         margin-bottom: 0.5rem;
-        // box-shadow: 0 0 5px 0 rgba(0,0,0,0.35);
         z-index: 0;
         cursor: pointer;
 
@@ -716,7 +683,6 @@ body {
     .project-links {
         display: flex;
         justify-content: space-around;
-        margin-bottom: 1rem;
         width: 90%;
 
         a {
@@ -793,19 +759,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-self: flex-start;
     align-items: center;
     padding: 1.5rem 0;
     margin: 4rem auto 0;
     width: calc(100% - 90px);
-    // width: 30vw;
-    // clip-path: polygon(1% 0%, 99% 0%, 100% 100%, 0 100%);
     border-top: 1px solid $darkmode-bg-color;
     color: black;
-    // background: $darkmode-bg-color;
 
     div:first-child {
         margin-bottom: 1em;
+    }
+
+    div a {
+        color: black;
     }
 }
 
@@ -906,22 +872,21 @@ body {
             width: 95%;
             max-width: 550px;
             clip-path: none;
-            padding: 0 0.75rem;
 
             .project-description {
                 height: 4.2rem;
                 border-bottom: 0.5rem solid white;
 
                 &:hover {
-                    margin: 2rem 0 0;
-                    padding-top: 1rem;
+                    margin: 0;
+                    padding-top: 0;
                     width: 100%;
-                    height: 85%;
+                    height: 75%;
                     border-bottom: none;
 
 
                     & + .image-container {
-                        margin-top: 6.5rem;
+                        margin-top: 4.5rem;
                     }
 
                     h3 {
@@ -935,7 +900,6 @@ body {
             }
 
             .image-container {
-                margin: 0 auto 1rem;
                 &::before, &::after {
                     display: none;
                 }
@@ -1123,8 +1087,6 @@ body {
     .projects-container {
 
         .fader {
-            // margin-top: 4rem;
-            padding: 2.5rem;
 
             &:first-child {
                 margin-top: 0;
@@ -1175,7 +1137,6 @@ body {
         }
 
         .fader {
-            max-width: 1600px;
             padding: 3rem 4rem;
             font-size: 1em;
 
@@ -1185,6 +1146,14 @@ body {
 
             .image-container::before, .image-container::after {
                 bottom: 15px;
+            }
+        }
+
+        .contact-container > div {
+            flex-direction: column;
+
+            & > div, form {
+                align-self: center;
             }
         }
     }
@@ -1197,6 +1166,10 @@ body {
     .menu-container .burger-menu > div::before,
     .menu-container .burger-menu > div::after {
         background: white;
+    }
+
+    a {
+        color: white;
     }
 
     .menu {
@@ -1248,5 +1221,8 @@ body {
     .footer {
         color: white;
         border-top: 1px solid white;
+        a {
+            color: white;
+        }
     }
 }
