@@ -85,7 +85,7 @@ body {
         width: 100%;
         height: calc(#{$contactHeight} * 2.5);
         z-index: 1;
-        background: linear-gradient(to bottom, white 20%, transparent 80%);
+        background-image: linear-gradient(to bottom, white 20%, transparent 80%);
     }
 
     .banner {
@@ -1034,7 +1034,7 @@ body {
     }
 
     .main::before {
-        background: linear-gradient(to bottom, white 55%, transparent 100%);
+        background-image: linear-gradient(to bottom, white 55%, transparent 100%);
     }
 
     .header {
@@ -1182,7 +1182,7 @@ body {
     }
 
     .header::before {
-        background: linear-gradient(to bottom, $darkmode-bg-color 20%, transparent 100%);
+        background-image: linear-gradient(to bottom, $darkmode-bg-color 20%, transparent 100%);
     }
 
     .title-flow {
