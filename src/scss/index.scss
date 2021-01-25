@@ -496,15 +496,15 @@ body {
     & > div {
         margin-top: 10vh;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         & > div {
-            align-self: flex-start;
-            width: 45%;
-            margin-top: -3em;
+            align-self: center;
+            width: 65%;
+            margin: -3em 0 3em;
         }
         form {
-            align-self: flex-end;
+            align-self: center;
             display: flex;
             flex-direction: column;
             width: 45%;
@@ -903,6 +903,18 @@ body {
             }
         }
 
+        .text-content {
+    
+            .highlight-color {
+                margin-left: 0rem;
+                font-size: 2em;
+
+                &::after {
+                    bottom: -10px;
+                }
+            }
+        }
+
         .fader {
             width: 95%;
             max-width: 550px;
@@ -943,7 +955,6 @@ body {
 
         .contact-container {
             & > div {
-                flex-direction: column;
                 & > div {
                     width: 80%;
                     align-self: center;
@@ -1181,14 +1192,6 @@ body {
 
             .image-container::before, .image-container::after {
                 bottom: 15px;
-            }
-        }
-
-        .contact-container > div {
-            flex-direction: column;
-
-            & > div, form {
-                align-self: center;
             }
         }
     }
