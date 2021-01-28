@@ -19,6 +19,15 @@ body {
     }
 
     .text-content {
+
+        .fulltitle {
+            display: flex;
+            
+            .subtitle {
+                margin-top: 5.5em;
+                margin-left: -5em;
+            }
+        }
         span {
             padding-left: 5px;
             font-size: 1em;
@@ -34,37 +43,33 @@ body {
         }
 
         .title-font {
-            font-family: 'Just Me Again Down Here', cursive;
+            font-family: 'Baloo Tammudu 2', cursive;
         }
 
+        
         .highlight-color {
             margin-left: -2rem;
-            font-size: 3em;
+            font-size: 3rem;
             color: $highlightFont;
             position: relative;
-
+            
             &::after {
                 position: absolute;
                 content: '';
-                bottom: -5px;
+                top: 55%;
                 left: 0px;
                 width: 100%;
-                height: 25px;
-                background: url('./assets/graphics/underline_swirl.png');
+                height: 15px;
+                background-image: url('./assets/graphics/underline_swirl.png');
                 background-size: cover;
                 z-index: -10;
             }
         }
 
-        .bold-title {
-            font-size: 3em;
-            margin-left: 10px;
-            margin-top: -0.6em;
-            padding: 4px 8px;
-            background: $highlightFont;
-            color: white;
+        .larger-title {
+            font-size: 4rem;
         }
-
+        
         & > p {
             margin: 1rem 0;
         }
@@ -75,7 +80,7 @@ body {
     }
 
     .intro {
-        margin-bottom: 2rem;
+        margin-bottom: 1em;
     }
 
     .inline-link {
@@ -907,11 +912,15 @@ body {
     
             .highlight-color {
                 margin-left: 0rem;
-                font-size: 2em;
+                font-size: 1em;
 
                 &::after {
-                    bottom: -10px;
+                    // bottom: -10px;
                 }
+            }
+
+            .larger-title {
+                font-size: 3em;
             }
         }
 
