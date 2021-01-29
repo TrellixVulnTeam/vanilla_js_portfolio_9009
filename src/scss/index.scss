@@ -881,19 +881,7 @@ body {
             opacity: 1;
         }
 
-        .action-message {
-            color: white;
-            margin: auto;
-            z-index: -1;
-        }
-
         .close-fullscreen {
-            display: flex;
-        }
-    }
-
-    .project-description:hover {
-        .close-description {
             display: flex;
         }
     }

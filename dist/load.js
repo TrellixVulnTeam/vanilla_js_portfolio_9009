@@ -5,6 +5,7 @@ const linkHome = document.getElementById('link-home')
 const linkProjects = document.getElementById('link-projects')
 const linkContact = document.getElementById('link-contact')
 const faders = document.querySelectorAll('.fader')
+const description = document.querySelector('.description')
 const menu = document.querySelector('.menu-toggler')
 let darkMode = false
 
