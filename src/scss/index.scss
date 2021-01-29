@@ -1334,6 +1334,10 @@ body {
             &:hover {
                 border: none;
             }
+
+            .simplebar-scrollbar::before {
+                background-color: white;
+            }
         }
 
         .image-container {
