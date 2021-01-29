@@ -10,6 +10,10 @@ html, body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
@@ -395,6 +399,7 @@ body {
         flex-direction: column;
         align-items: center;
         cursor: pointer;
+        margin-bottom: 3em;
     }
 }
 
@@ -892,7 +897,6 @@ body {
             display: flex;
         }
     }
-
 }
 
 @media screen and (max-width: 350px) {
