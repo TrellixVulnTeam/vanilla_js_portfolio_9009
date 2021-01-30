@@ -17,6 +17,7 @@ html {
 body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(230, 223, 223);
 
     h1 {
         font-size: 1.5rem;
@@ -110,8 +111,8 @@ body {
         width: 100%;
         height: calc(#{$contactHeight} * 2.5);
         z-index: 1;
-        background-image: linear-gradient(to bottom, white 20%, rgba(255,255,255,0) 80%);
-        background-image: -webkit-linear-gradient(to bottom, white 20%, rgba(255,255,255,0) 80%);
+        background-image: linear-gradient(to bottom, rgb(230, 223, 223) 20%, rgba(255,255,255,0) 80%);
+        background-image: -webkit-linear-gradient(to bottom, rgb(230, 223, 223) 20%, rgba(255,255,255,0) 80%);
     }
 
     .banner {
@@ -139,7 +140,7 @@ body {
             cursor: pointer;
             &::before {
                 content: '';
-                background: white;
+                background: rgb(230, 223, 223);
                 position: absolute;
                 top: -20%;
                 right: -5%;
@@ -324,17 +325,17 @@ body {
 
         &:checked {
             & + .burger-menu div {
-                background-color: white;
+                background-color: rgb(230, 223, 223);
                 transform: rotate(225deg);
                 &::after {
-                    background-color: white;
+                    background-color: rgb(230, 223, 223);
                     top: 0;
                     transform: rotate(90deg);
                 }
 
                 &::before {
                     top: 0;
-                    background-color: white;
+                    background-color: rgb(230, 223, 223);
                 }
             }
 
@@ -441,7 +442,7 @@ body {
             position: relative;
             font-size: 2em;
             margin-right: 1em;
-            background: white;
+            background: rgb(230, 223, 223);
             padding: 0 5px;
             &::before, &::after {
                 content: '';
@@ -467,7 +468,6 @@ body {
 
 .about-container, .contact-container {
     justify-content: flex-start;
-    gap: 2rem;
     align-items: center;
 
     & > div {
@@ -480,6 +480,7 @@ body {
             margin: 1em 0;
             align-self: flex-start;
         }
+
         &:last-child {
             padding-bottom: 3rem;
         }
@@ -494,8 +495,7 @@ body {
         justify-content: space-around;
         & > div {
             align-self: center;
-            width: 65%;
-            margin: -3em 0 3em;
+            margin: -3em 0 1em;
         }
         form {
             align-self: center;
@@ -512,7 +512,7 @@ body {
                 border-bottom-right-radius: 10px;
                 border: none;
                 background: rgba($darkmode-bg-color, 0.85);
-                border: 1px solid white;
+                border: 1px solid rgb(230, 223, 223);
                 color: white;
                 padding: 0.5rem;
 
@@ -564,6 +564,7 @@ body {
     max-width: 1600px;
     opacity: 0;
     color: black;
+    background-color: rgb(243, 239, 239);
     margin-bottom: 4em;
     padding: 1.5em 0.5em;
     border-radius: 6px;
@@ -572,7 +573,7 @@ body {
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
     .project-description {
-        border-bottom: 0.5rem solid white;
+        border-bottom: 0.5rem solid rgb(243, 239, 239);
         align-self: center;
         position: relative;
         width: calc(100% - 5rem);
@@ -597,7 +598,7 @@ body {
             width: 100%;
             height: 1.5em;
             font-size: 0.8em;
-            background: white;
+            background-color: rgb(243, 239, 239);
         }
 
         & > div {
@@ -679,7 +680,7 @@ body {
 
     .image-container {
         position: relative;
-        background: white;
+        background-color: rgb(230, 223, 223);
         margin-bottom: 0.5rem;
         z-index: 0;
         cursor: pointer;
@@ -814,7 +815,7 @@ body {
     color: white;
     clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
     transition: right 400ms ease-in-out, clip-path 400ms ease-in-out;
-    outline: 1px solid white;
+    outline: 1px solid rgb(243, 239, 239);
     z-index: 10;
 
     &::before {
@@ -974,7 +975,7 @@ body {
 
             .project-description {
                 height: 4.2rem;
-                border-bottom: 0.5rem solid white;
+                border-bottom: 0.5rem solid rgb(230, 223, 223);
 
                 &:hover {
                     margin: 0;
@@ -1281,10 +1282,10 @@ body {
     .menu-container .burger-menu > div,
     .menu-container .burger-menu > div::before,
     .menu-container .burger-menu > div::after {
-        background: white;
+        background: rgb(230, 223, 223);
     }
 
-    a {
+    #snake, a {
         color: white;
     }
 
