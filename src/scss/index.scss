@@ -489,7 +489,7 @@ body {
 
 .contact-container {
     & > div {
-        margin-top: 10vh;
+        margin-top: 8vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -1160,6 +1160,10 @@ body {
 
     body {
         font-size: 1.5rem;
+
+        .text-content .fulltitle .subtitle {
+            margin-top: 4.5em;
+        }
     }
 
     .main::before {
@@ -1249,6 +1253,10 @@ body {
                 font-size: 2.5rem;
             }
         }
+    }
+
+    body .text-content .highlight-color {
+        font-size: 5rem;
     }
 
     .main {
