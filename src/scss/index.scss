@@ -808,7 +808,7 @@ body {
     justify-content: space-around;
     align-items: center;
     margin-top: 1rem;
-    padding: 1.5rem 0;
+    padding: 1.5em 0;
     width: 100vw;
     height: 5vw;
     background: $darkmode-menu-color;
@@ -1094,6 +1094,7 @@ body {
     .footer {
         position: relative;
         margin: 2rem auto 0;
+        padding: 3em 0;
         color: white;
         background: $darkmode-bg-color;
         flex-direction: column;
