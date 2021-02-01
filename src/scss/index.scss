@@ -735,7 +735,7 @@ body {
             
             &:hover {
                 outline-offset: 4px;
-                outline: 1px solid white;
+                outline: 1px solid rgb(243, 239, 239);
                 background-color: rgba($highlightFont, 0.3);
                 transition: outline-offset 200ms ease-out, outline 200ms ease-in-out 100ms;
 
