@@ -736,7 +736,7 @@ body {
             &:hover {
                 outline-offset: 4px;
                 outline: 1px solid rgb(243, 239, 239);
-                background-color: rgba($highlightFont, 0.3);
+                background-color: rgba($highlightFont, 0.8);
                 transition: outline-offset 200ms ease-out, outline 200ms ease-in-out 100ms;
 
                 &::after {
@@ -1335,8 +1335,14 @@ body {
         }
 
         .project-links a {
+            outline: 1px solid white;
             border: 1px solid white;
             color: white;
+
+            &:hover {
+                border: 1px solid $darkmode-bg-color;
+                outline: 1px solid $darkmode-bg-color;
+            }
         }
     }
 
