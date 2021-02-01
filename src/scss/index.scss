@@ -74,6 +74,7 @@ body {
 
     .inline-link {
         text-decoration: underline;
+        color: black;
         &:hover {
             cursor: pointer;
             text-decoration-color: $highlightFont;
@@ -1277,6 +1278,9 @@ body {
 .dark-mode {
     background: $darkmode-bg-color;
     color: white;
+    .inline-link {
+        color: white;
+    }
     .menu-container .burger-menu > div,
     .menu-container .burger-menu > div::before,
     .menu-container .burger-menu > div::after {
