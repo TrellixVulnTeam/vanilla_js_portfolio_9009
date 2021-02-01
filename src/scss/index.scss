@@ -811,6 +811,7 @@ body {
     padding: 1.5em 0;
     width: 100vw;
     height: 5vw;
+    max-height: 150px;
     background: $darkmode-menu-color;
     color: white;
     clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
