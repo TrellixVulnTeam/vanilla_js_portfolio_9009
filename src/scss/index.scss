@@ -19,6 +19,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: $lightmode-bg-color;
 
+    a, a:active, a:visited {
+        color: black;
+    }
+
     h1 {
         font-size: 1.5rem;
     }
@@ -487,6 +491,22 @@ body {
             padding-bottom: 3rem;
         }
     }
+
+    .experience-links {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        justify-content: space-around;
+        margin: 0 auto;
+
+        a {
+            padding: 0.5em 1em;
+            text-decoration: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.5);
+            box-shadow: 0 5px 10px 1px rgba(0,0,0,0.3);
+        }
+    }
 }
 
 .contact-container {
@@ -566,7 +586,7 @@ body {
     max-width: 1600px;
     opacity: 0;
     color: black;
-    background-color: rgb(243, 239, 239);
+    background-color: $fader-bg-color;
     margin-bottom: 4em;
     padding: 1.5em 0.5em;
     border-radius: 6px;
@@ -575,7 +595,7 @@ body {
     transition: transform 650ms ease-out, opacity 250ms ease-in, width 400ms ease-in-out;
     
     .project-description {
-        border-bottom: 0.5rem solid rgb(243, 239, 239);
+        border-bottom: 0.5rem solid $fader-bg-color;
         align-self: center;
         position: relative;
         width: calc(100% - 5rem);
@@ -600,7 +620,7 @@ body {
             width: 100%;
             height: 1.5em;
             font-size: 0.8em;
-            background-color: rgb(243, 239, 239);
+            background-color: $fader-bg-color;
         }
 
         & > div {
@@ -735,7 +755,7 @@ body {
             
             &:hover {
                 outline-offset: 4px;
-                outline: 1px solid rgb(243, 239, 239);
+                outline: 1px solid $fader-bg-color;
                 background-color: rgba($highlightFont, 0.8);
                 transition: outline-offset 200ms ease-out, outline 200ms ease-in-out 100ms;
 
@@ -816,7 +836,7 @@ body {
     color: white;
     clip-path: polygon(4em 0, 100% 0, 100% 100%, 0 100%);
     transition: right 400ms ease-in-out, clip-path 400ms ease-in-out;
-    outline: 1px solid rgb(243, 239, 239);
+    outline: 1px solid $fader-bg-color;
     z-index: 10;
 
     &::before {
@@ -1344,6 +1364,13 @@ body {
                 outline: 1px solid $darkmode-bg-color;
             }
         }
+    }
+
+    .experience-links .experience-buttons {
+        background: $darkmode-bg-color;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 2px 8px 1px rgba(255, 255, 255, 0.3);
     }
 
     .footer {
