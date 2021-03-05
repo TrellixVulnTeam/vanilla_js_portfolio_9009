@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nix Web Dev</title>
+    <link rel="shortcut icon" type="image/x-icon" sizes="any" href="./assets/graphics/favicon.ico"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="./index.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <script src='load.js' defer></script>
+</head>
+<body id='body' onLoad="setLogo()">
+    <div class='header'>
+        <div class='menu-container'>
+            <input class='menu-toggler' type='checkbox'/>
+            <div class='burger-menu'><div></div></div>
+            <div class='menu'>
+                <div id='darkmode-container' class='no-select'>
+                    <img src='./assets/graphics/light-mode-icon.png' height='100%'>
+                    <div id='darkmode-toggler' class='no-select' onClick="toggleDarkMode()">
+                        <div id='toggler'></div>
+                    </div>
+                    <img src='./assets/graphics/dark-mode-icon.png' height='100%'>
+                </div>
+                <ul>
+                    <li class='link' id='link-projects' onClick="navigateProjects()">PROJECTS</li>
+                    <li class='link active-link' id='link-home' onClick="navigateAbout()">ABOUT</li>
+                    <li class='link' id='link-contact' onClick="navigateContact()">CONTACT</li>
+                </ul>
+            </div>
+        </div>
+        <div class='banner'>
+            <div class='logo' onClick="navigateProjects()">
+                <img id='logo' src='./assets/graphics/LogoLight-500px.png' alt='logo' height='110%'/>
+            </div>
+            <div class='contact-links'>
+                <a target='_blank' href='mailto:mpnix@protonmail.com' class='header-link' id='email-link'></a>
+                <a target='_blank' href='https://github.com/c0llid3r' class='header-link' id='github-link'></a>
+                <a target='_blank' href='https://www.linkedin.com/in/michael-nix-a0b88b200/' class='header-link' id='linkedin-link'></a>
+            </div>
+        </div>
+    </div>
+
+    <div class='main'>
+
+<!-- Thank you page -->
+
+        <div class='container'>
+            <div class='text-content'>
+                <h3>Thank you for your message</h3>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
