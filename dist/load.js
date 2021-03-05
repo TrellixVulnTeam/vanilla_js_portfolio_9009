@@ -146,7 +146,3 @@ const setLogo = () => {
 
     document.getElementById('current-year').innerHTML = new Date().getFullYear()
 }
-
-const thankYouMessage = () => {
-    alert('hi')
-}
