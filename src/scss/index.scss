@@ -38,7 +38,6 @@ body {
             }
         }
         span {
-            padding-left: 5px;
             font-size: 1em;
         }
 
@@ -47,7 +46,7 @@ body {
             text-decoration: underline;
             cursor: url('./assets/graphics/cursor.png'), pointer;
             &:hover {
-                text-decoration-color: $highlightFont;
+                text-decoration: none;
             }
         }
 
@@ -77,20 +76,28 @@ body {
     }
 
     .inline-link {
+        position: relative;
         text-decoration: underline;
         color: black;
         &:hover {
             cursor: pointer;
-            text-decoration-color: $highlightFont;
+            text-decoration: none;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: $highlightFont;
+            }
         }
     }
 
     a {
-        text-decoration: underline;
-
+        text-decoration: none;
         &:hover {
             cursor: pointer;
-            text-decoration-color: $highlightFont;
         }
 
         &:visited, &:active {
