@@ -79,17 +79,23 @@ body {
         position: relative;
         text-decoration: underline;
         color: black;
+        &::after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            top: 120%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: $highlightFont;
+        }
         &:hover {
             cursor: pointer;
             text-decoration: none;
             &::after {
-                content: '';
-                position: absolute;
                 top: 100%;
-                left: 0;
-                width: 100%;
-                height: 4px;
-                background-color: $highlightFont;
+                opacity: 1;
+                transition: opacity ease-in 600ms, top ease 600ms;
             }
         }
     }
